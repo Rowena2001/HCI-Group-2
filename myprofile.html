@@ -25,19 +25,62 @@
             <p class="purple"><strong>My Faculty:</strong> Faculty of Science</p>
             <p class="purple"><strong>My Program:</strong> Honours Specialization in Computer Science</p>
         </div>
+        <br><br>
+        <div>
+            <button class="accordion"><strong class="purple">CS2208</strong> Introduction to Computer Organization and Architecture</button>
+            <div class="panel">
+            <p>Lorem ipsum...</p>
+            </div>
+    
+            <button class="accordion"><strong class="purple">CS2209</strong> Applied Logic for Computer Science</button>
+            <div class="panel">
+            <p>Lorem ipsum...</p>
+            </div>
+    
+            <button class="accordion"><strong class="purple">CS2210</strong> Data Structures and Algorithms</button>
+            <div class="panel">
+            <p>Lorem ipsum...</p>
+            </div>
+
+            <button class="accordion"><strong class="purple">CS2211</strong> Software Tools and Systems Programming</button>
+            <div class="panel">
+            <p>Lorem ipsum...</p>
+            </div>
+    
+            <button class="accordion"><strong class="purple">Stats2244</strong> Statistics for Science</button>
+            <div class="panel">
+            <p>Lorem ipsum...</p>
+            </div>
+
+        </div>
     </div>
 </body>
 </html>
 
 <script>
-function signout() {
-    var val = confirm("Are you sure you want to sign out?");
-    if(val == true ) {
-        window.location.href = 'signout.html';
-        return true;
-    } 
-    else {
-        return false;
+
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
     }
-}
+
+    function signout() {
+        var val = confirm("Are you sure you want to sign out?");
+        if(val == true ) {
+            window.location.href = 'signout.html';
+            return true;
+        } 
+        else {
+            return false;
+        }
+    }
 </script>
