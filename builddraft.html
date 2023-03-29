@@ -15,8 +15,8 @@
         <a class="active" href="builddraft.html">Build Draft</a>
         <a href="myschedule.html">My Schedule</a>
         <a href="mydrafts.html">My Drafts</a>
-        <a href="signout.html">Sign Out</a>
-        <img src="images/logo.png" alt="logo">
+        <a onclick="signout()">Sign Out</a>
+        <img src="images/logo.png" class="logo" alt="logo">
     </div>
     <div class="content">
         insert selection stuff
@@ -27,3 +27,16 @@
     </div>
 </body>
 </html>
+
+<script>
+function signout() {
+    var val = confirm("Are you sure you want to sign out?");
+    if(val == true ) {
+        window.location.href = 'signout.html';
+        return true;
+    } 
+    else {
+        return false;
+    }
+}
+</script>

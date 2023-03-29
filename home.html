@@ -15,7 +15,7 @@
         <a href="builddraft.html">Build Draft</a>
         <a href="myschedule.html">My Schedule</a>
         <a href="mydrafts.html">My Drafts</a>
-        <a href="signout.html">Sign Out</a>
+        <a onclick="signout()">Sign Out</a>
         <img src="images/logo.png" class="logo" alt="logo">
     </div>
     </center>
@@ -34,8 +34,8 @@
                     <option value="arts">Arts and Humanities</option>
                 </select>
             </div>
-            <br>
             <button class="button" onclick="facselect()">Set Faculty</button>
+            <br><br>
             <div class="selectdiv">
                 <label for="module" class="purple"><strong>Please select a module:</strong></label>
                 <select class="dropdown" name="module" id="module">
@@ -45,7 +45,6 @@
                     <option hidden="hidden" value="eng" id="eng">Honours Specialization in English Language and Literature</option>
                 </select>
             </div>
-            <br>
             <button class="button" onclick="viewProg()">View Module Progression</button>
         </div>
         <br>
@@ -97,5 +96,15 @@
             img.src = "images/home_eng.png";
         }
         document.getElementById("modProg").appendChild(img);
+    }
+    function signout() {
+        var val = confirm("Are you sure you want to sign out?");
+        if(val == true ) {
+            window.location.href = 'signout.html';
+            return true;
+        } 
+        else {
+            return false;
+        }
     }
 </script>

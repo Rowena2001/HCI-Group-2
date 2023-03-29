@@ -15,17 +15,29 @@
         <a href="builddraft.html">Build Draft</a>
         <a href="myschedule.html">My Schedule</a>
         <a href="mydrafts.html">My Drafts</a>
-        <a href="signout.html">Sign Out</a>
-        <img src="images/logo.png" alt="logo">
+        <a onclick="signout()">Sign Out</a>
+        <img src="images/logo.png" class="logo" alt="logo">
     </div>
     </center>   
     <div class="content">
-        <h1>Hospital Database</h1>
-        <div>What would you like to do today?</div>
-        <br>
-        <form action="http://cs3319.gaul.csd.uwo.ca/vm247/a3geronimo/option1.php"> <!-- option 1 -->
-            <input type="submit" value="View Doctors by Order" />
-        </form><br>
+        <h1>Amir HaghighatiMaleki</h1>
+        <div class="card">
+            <p class="purple"><strong>My Faculty:</strong> Faculty of Science</p>
+            <p class="purple"><strong>My Program:</strong> Honours Specialization in Computer Science</p>
+        </div>
     </div>
 </body>
 </html>
+
+<script>
+function signout() {
+    var val = confirm("Are you sure you want to sign out?");
+    if(val == true ) {
+        window.location.href = 'signout.html';
+        return true;
+    } 
+    else {
+        return false;
+    }
+}
+</script>
