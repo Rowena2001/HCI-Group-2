@@ -30,13 +30,14 @@
 .logo {
   width: 110px;
   height: 45px;
-  left: 95%;
   top: 10px;
+  float: right;
+  margin-right: 10px;
 }
 
 /* Page content style */
 .content {
-  width: 1000px;
+  width: 75%;
   padding-top: 10px;
   padding-right: 200px;
   padding-bottom: 10px;
@@ -56,6 +57,7 @@ h1 {
 
 .card {
   border-radius: 10px;
+  width: 100%;
   background-color: #E0D0FB;
   overflow: hidden;
 }
@@ -77,8 +79,8 @@ select {
   font-family: "Times New Roman";
 }
 
-button {
-  background-color: #492A7E !important;
+.button {
+  background-color: #492A7E;
   color: white;
   font-size: 16px;
   font-family: "Times New Roman";
@@ -89,12 +91,9 @@ button {
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
+  transition-duration: 0.2s;
 }
 
-  button:hover {
+  .button:hover {
     background-color: #ddd;
-  }
-
-  button:active {
-    background-color: #63419E;
   }
