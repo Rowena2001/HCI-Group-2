@@ -1,0 +1,101 @@
+<!-- HCI Project: Draft My Schedule -->
+<!-- Home -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <center>
+    <div class="topnav">
+        <a class="active" href="home.html">Home</a>
+        <a href="myprofile.html">My Profile</a>
+        <a href="builddraft.html">Build Draft</a>
+        <a href="myschedule.html">My Schedule</a>
+        <a href="mydrafts.html">My Drafts</a>
+        <a href="signout.html">Sign Out</a>
+        <img src="images/logo.png" class="logo" alt="logo">
+    </div>
+    </center>
+    <div class="content">
+        <h1>Welcome Amir!</h1>
+        <div class="card">
+            <p class="purple"><strong>My Faculty:</strong> Faculty of Science</p>
+            <p class="purple"><strong>My Program:</strong> Honours Specialization in Computer Science</p>
+        </div>
+        <h1>View Academic Standing Status</h1>
+        <div>
+            <div class="selectdiv">
+                <label for="faculty" class="purple"><strong>Please select a faculty:</strong></label>
+                <select class="dropdown" name="faculty" id="faculty">
+                    <option value="science">Science</option>
+                    <option value="arts">Arts and Humanities</option>
+                </select>
+            </div>
+            <br>
+            <button onclick="facselect()">Set Faculty</button>
+            <div class="selectdiv">
+                <label for="module" class="purple"><strong>Please select a module:</strong></label>
+                <select class="dropdown" name="module" id="module">
+                    <option value="cs" id="cs" >Honours Specialization in Computer Science</option>
+                    <option value="bio" id="bio">Honours Specialization in Biology</option>
+                    <option hidden="hidden" value="cla" id="cla">Honours Specialization in Classical Studies</option>
+                    <option hidden="hidden" value="eng" id="eng">Honours Specialization in English Language and Literature</option>
+                </select>
+            </div>
+            <br>
+            <button onclick="viewProg()">View Module Progression</button>
+        </div>
+        <br>
+        <div id="modProg"></div>
+    </div>
+</body>
+</html>
+
+<script>
+    function facselect() {
+        var f = document.getElementById("faculty");
+        var cs = document.getElementById("cs");
+        var bio = document.getElementById("bio");
+        var cla = document.getElementById("cla");
+        var eng = document.getElementById("eng");
+        if (f.value == "arts") {
+            cs.setAttribute("hidden", "hidden");
+            bio.setAttribute("hidden", "hidden");
+            cla.removeAttribute("hidden");
+            eng.removeAttribute("hidden");
+        }
+        else {
+            cla.setAttribute("hidden", "hidden");
+            eng.setAttribute("hidden", "hidden");
+            cs.removeAttribute("hidden");
+            bio.removeAttribute("hidden");
+        }
+    }
+    function viewProg() {
+        var img = document.getElementById("modProg").childNodes[0];
+        var m = document.getElementById("module");
+        if (img) {
+            img.parentNode.removeChild(img);
+        }
+        else {
+            var img = document.createElement("IMG");
+        }
+
+        if (m.value == "cs") {
+            img.src = "images/home_hs_cs.png";
+        }
+        else if (m.value == "bio"){
+            img.src = "images/home_bio.png";
+        }
+        else if (m.value == "cla"){
+            img.src = "images/home_cla.png";
+        }
+        else {
+            img.src = "images/home_eng.png";
+        }
+        document.getElementById("modProg").appendChild(img);
+    }
+</script>
