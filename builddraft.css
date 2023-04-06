@@ -151,6 +151,8 @@ html {
   #first-course-overlay {
     position: fixed;
     display: none;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     top: 0;
@@ -165,6 +167,8 @@ html {
   #second-course-overlay {
     position: fixed;
     display: none;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     top: 0;
@@ -178,6 +182,8 @@ html {
   #third-course-overlay {
     position: fixed;
     display: none;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     top: 0;
@@ -196,4 +202,160 @@ html {
     color: white;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
+  }
+
+  .example .tf-nc {
+    height: 60px;
+
+  }
+  #hci {
+    background-color: #E2F0CB;
+  }
+  #selected2 {
+    background-color: #FFDAC1;
+  }
+  #selected3 {
+    background-color: #FF9AA2;
+  }
+  #post1 {
+    background-color: #492A7E 
+  }
+  .post-div {
+    color:white;
+  }
+  #prereq1, #prereq2, #prereq3, #prereq4, #prereq5 {
+    background-color: #E0D0FB;
+  }
+  .tf-custom .tf-nc:before,
+  .tf-custom .tf-nc:after {
+    
+  }
+  .tf-nc:before {
+    border-left-width: thick !important;
+  }
+  .tf-nc::after{
+    border-left-width: thick !important;
+  }
+  .li:before{
+    border-top-width: thick !important;
+  }
+  .tf-custom li li:before {
+    
+  }
+
+  #prereq1:hover #prereqtip1 {
+    visibility: visible;
+  }
+  
+  
+  #prereq1 #prereqtip1{
+    visibility: hidden;
+    font-size:12px;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+
+  #prereq2:hover #prereqtip2 {
+    visibility: visible;
+  }
+  #prereq2 #prereqtip2{
+    visibility: hidden;
+    font-size:12px;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  #prereq3:hover #prereqtip3 {
+    visibility: visible;
+  }
+  #prereq3 #prereqtip3 {
+    visibility: hidden;
+    font-size:12px;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  #prereq4:hover #prereqtip4 {
+    visibility: visible;
+  }
+  #prereq4 #prereqtip4 {
+    visibility: hidden;
+    font-size:12px;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  #prereq5:hover #prereqtip5 {
+    visibility: visible;
+  }
+  #prereq5 #prereqtip5{
+    visibility: hidden;
+    font-size:12px;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+
+  #post1:hover #posttip1 {
+    visibility: visible;
+  }
+  #post1 #posttip1{
+    visibility: hidden;
+    font-size:12px;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+
+  /* make the nodes round and change their background-color */
+  .tf-ancestor-tree { position: relative; }
+  .tf-ancestor-tree > ul { transform: rotateX(180deg); }
+  .tf-ancestor-tree li ul { margin-bottom: 1em; }
+  
+  .node-text {
+    display: inline-block;
+    transform: rotateX(180deg);
   }

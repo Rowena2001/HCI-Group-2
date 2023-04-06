@@ -7,6 +7,7 @@
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="builddraft.css">
+    <link href="https://unpkg.com/treeflex/dist/css/treeflex.css" rel="stylesheet">
 </head>
 <body>
     <script src="dragdrop.js"></script>
@@ -146,13 +147,183 @@
             <div class="time-col">9:30 PM</div>
         </div>
         <div id="first-course-overlay" onclick="firstoff()">
-            <div id="text">Overlay Text</div>
+            <div class="tf-tree tf-ancestor-tree"> 
+                <ul>
+                    <li>
+                        <span class="node-text">
+                            <span id="post1" class="tf-nc">
+                                <div class="post-div">
+                                    <div class="selected-text">Required For</div>
+                                    <div class="course-name">COMPSCI 4472</div>
+                                    <div id="posttip1">Course avaliable Winter 2024</div>
+
+                                </div>
+                              </span>
+                            </span>
+                <ul>
+                    <li class="tree-line">
+
+                      <span id="selected3" class="tf-nc">
+                        <span class="node-text">
+                          <div class="selected-div">
+                              <div class="selected-text">Selected Course</div>
+                              <div class="course-name">COMPSCI 3305</div>
+                          </div>
+                        </span>
+                      </span>
+                      <ul>
+                        <li>
+                            <span id="prereq2" class="tf-nc">
+                                <span class="node-text">
+                                <div class="prereq-div">
+                                    <div class="prereq-text">Pre-requisite</div>
+                                    <div class="course-name">COMPSCI 2208</div>
+                                    <div id="prereqtip2">Course avaliable in Fall 2024</div>
+                                </div>
+                                </span>
+                            </span>
+                        </li> 
+                        <li>
+                            <span id="prereq3" class="tf-nc">
+                                <span class="node-text">
+                                <div class="prereq-div">
+                                    <div class="prereq-text">Pre-requisite</div>
+                                    <div class="course-name">COMPSCI 2210</div>
+                                    <div id="prereqtip3">Course avaliable in Winter 2024</div>
+                                </div>
+                                </span>
+                                    </span>
+                        </li>
+                        <li>
+                            <span id="prereq4" class="tf-nc">
+                                <span class="node-text">
+                                <div class="prereq-div">
+                                    <div class="prereq-text">Pre-requisite</div>
+                                    <div class="course-name">COMPSCI 2211</div>
+                                    <div id="prereqtip4">Course avaliable in Fall 2024</div>
+                                </div>
+                                </span>
+                                    </span>
+                        </li> 
+                        <li>
+                            <span id="prereq5" class="tf-nc">
+                                <span class="node-text">
+                                <div class="prereq-div">
+                                    <div class="prereq-text">Pre-requisite</div>
+                                    <div class="course-name">COMPSCI 2209</div>
+                                    <div id="prereqtip5">Course avaliable in Winter 2024</div>
+                                </div>
+                                </span>
+                                    </span>
+                        </li>    
+                    </ul>
+                    </li>
+                  </ul>  
+                  </li>
+                  </ul>              
+            </div>
         </div>
         <div id="second-course-overlay" onclick="secondoff()">
-            <div id="text">Overlay Text</div>
+            <div class="tf-tree tf-ancestor-tree"> 
+                <ul>
+                    <li>
+                        <span class="node-text">
+                            <span id="post1" class="tf-nc">
+                                <div class="post-div">
+                                    <div class="selected-text">Required For</div>
+                                    <div class="course-name">COMPSCI 4409</div>
+                                    <div id="posttip1">Course avaliable 2024 (Year long)</div>
+
+                                </div>
+                              </span>
+                            </span>
+                <ul>
+                    <li class="tree-line">
+
+                      <span id="selected2" class="tf-nc">
+                        <span class="node-text">
+                          <div class="selected-div">
+                              <div class="selected-text">Selected Course</div>
+                              <div class="course-name">COMPSCI 3350</div>
+                          </div>
+                        </span>
+                      </span>
+                      <ul>
+                        <li>
+                            <span id="prereq2" class="tf-nc">
+                                <span class="node-text">
+                                <div class="prereq-div">
+                                    <div class="prereq-text">Pre-requisite</div>
+                                    <div class="course-name">COMPSCI 2208</div>
+                                    <div id="prereqtip2">Course avaliable in Fall 2024</div>
+                                </div>
+                                </span>
+                            </span>
+                        </li> 
+                        <li>
+                            <span id="prereq3" class="tf-nc">
+                                <span class="node-text">
+                                <div class="prereq-div">
+                                    <div class="prereq-text">Pre-requisite</div>
+                                    <div class="course-name">COMPSCI 2210</div>
+                                    <div id="prereqtip3">Course avaliable in Winter 2024</div>
+                                </div>
+                                </span>
+                                    </span>
+                        </li>
+                        <li>
+                            <span id="prereq4" class="tf-nc">
+                                <span class="node-text">
+                                <div class="prereq-div">
+                                    <div class="prereq-text">Pre-requisite</div>
+                                    <div class="course-name">COMPSCI 2211</div>
+                                    <div id="prereqtip4">Course avaliable in Fall 2024</div>
+                                </div>
+                                </span>
+                                    </span>
+                        </li> 
+                        <li>
+                            <span id="prereq5" class="tf-nc">
+                                <span class="node-text">
+                                <div class="prereq-div">
+                                    <div class="prereq-text">Pre-requisite</div>
+                                    <div class="course-name">COMPSCI 2209</div>
+                                    <div id="prereqtip5">Course avaliable in Winter 2024</div>
+                                </div>
+                                </span>
+                                    </span>
+                        </li>    
+                    </ul>
+                    </li>
+                  </ul>  
+                  </li>
+                  </ul>              
+            </div>    
         </div>
         <div id="third-course-overlay" onclick="thirdoff()">
-            <div id="text">Overlay Text</div>
+            <div class="tf-tree example">
+                <ul>
+                  <li class="tree-line">
+                    <span id="prereq1" class="tf-nc">
+                <div class="prereq-div">
+                    <div class="prereq-text">Pre-requisite</div>
+                    <div class="course-name">COMPSCI 3307</div>
+                    <div id="prereqtip1">Course avaliable in Fall 2024</div>
+                </div>
+                    </span>
+                    <ul>
+                      <li class="tree-line">
+                        <span id="hci" class="tf-nc">
+                            <div class="selected-div">
+                                <div class="selected-text">Selected Course</div>
+                                <div class="course-name">COMPSCI 4474</div>
+                            </div>
+                        </span>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
         </div>
 </body>
 </html>
