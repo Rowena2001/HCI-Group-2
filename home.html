@@ -29,22 +29,23 @@
         <div>
             <div class="selectdiv">
                 <label for="faculty" class="purple"><strong>Please select a faculty:</strong></label>
-                <select class="dropdown" name="faculty" id="faculty">
+                <select class="dropdown" name="faculty" id="faculty" >
                     <option value="science">Science</option>
                     <option value="arts">Arts and Humanities</option>
                 </select>
             </div>
-            <button class="button" onclick="facselect()">Set Faculty</button>
-            <br><br>
+            <br>
             <div class="selectdiv">
                 <label for="module" class="purple"><strong>Please select a module:</strong></label>
                 <select class="dropdown" name="module" id="module">
-                    <option value="cs" id="cs" >Honours Specialization in Computer Science</option>
+                    <optgroup id="cs_group" label="&nbsp;&nbsp;&nbsp;Computer Science"></optgroup>
+                    <option value="cs_hs" id="cs_hs" >Honours Specialization in Computer Science</option>
+                    <option value="cs_m" id="cs_m" >Major in Computer Science</option>
+                    <optgroup id="bio_group" label="&nbsp;&nbsp;&nbsp;Biology"></optgroup>
                     <option value="bio" id="bio">Honours Specialization in Biology</option>
-                    <option hidden="hidden" value="cla" id="cla">Honours Specialization in Classical Studies</option>
-                    <option hidden="hidden" value="eng" id="eng">Honours Specialization in English Language and Literature</option>
                 </select>
             </div>
+            <br>
             <button class="button" onclick="viewProg()">View Module Progression</button>
         </div>
         <br>
@@ -54,25 +55,24 @@
 </html>
 
 <script>
+
+    document.addEventListener('DOMContentLoaded', init, false);
+
+    function init() {
+        var fac = document.getElementById('faculty');
+        faculty.addEventListener('change', facselect, true);
+    }
+
     function facselect() {
         var f = document.getElementById("faculty");
-        var cs = document.getElementById("cs");
-        var bio = document.getElementById("bio");
-        var cla = document.getElementById("cla");
-        var eng = document.getElementById("eng");
         if (f.value == "arts") {
-            cs.setAttribute("hidden", "hidden");
-            bio.setAttribute("hidden", "hidden");
-            cla.removeAttribute("hidden");
-            eng.removeAttribute("hidden");
+            document.getElementById("module").innerHTML = '<optgroup id="cla_group" label="&nbsp;&nbsp;&nbsp;Classical Studies"></optgroup><option value="cla" id="cla">Honours Specialization in Classical Studies</option><optgroup id="eng_group" label="&nbsp;&nbsp;&nbsp;English Language and Literature"></optgroup><option value="eng" id="eng">Honours Specialization in English Language and Literature</option>';
         }
         else {
-            cla.setAttribute("hidden", "hidden");
-            eng.setAttribute("hidden", "hidden");
-            cs.removeAttribute("hidden");
-            bio.removeAttribute("hidden");
+            document.getElementById("module").innerHTML = '<optgroup id="cs_group" label="&nbsp;&nbsp;&nbsp;Computer Science"></optgroup><option value="cs_hs" id="cs_hs" >Honours Specialization in Computer Science</option><option value="cs_m" id="cs_m" >Major in Computer Science</option><optgroup id="bio_group" label="&nbsp;&nbsp;&nbsp;Biology"></optgroup><option value="bio" id="bio">Honours Specialization in Biology</option>';
         }
-    }
+    };
+
     function viewProg() {
         var img = document.getElementById("modProg").childNodes[0];
         var m = document.getElementById("module");
@@ -83,8 +83,11 @@
             var img = document.createElement("IMG");
         }
 
-        if (m.value == "cs") {
+        if (m.value == "cs_hs") {
             img.src = "images/home_hs_cs.png";
+        }
+        else if (m.value == "cs_m") {
+            img.src = "images/home_m_cs.png";
         }
         else if (m.value == "bio"){
             img.src = "images/home_bio.png";
