@@ -1,0 +1,199 @@
+html {
+    font-family: sans-serif;
+  }
+  
+  .grid-container {
+    display:flex;
+    column-gap: 20px;
+  }
+  .grid {
+    border-collapse: collapse;
+    border: 2px solid rgb(0, 0, 0);
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    display:grid;
+    grid-template-columns: 1fr repeat(5,2fr);
+    grid-template-rows: repeat(32,30px);
+    width:50%;
+
+  }
+  .semester-header {
+    grid-column: 1/ span 11;
+    font-size: 17px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E0D0FB;
+  }
+  
+  .time-header {
+    grid-column:1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E0D0FB;
+    border: 1px solid rgb(0, 0, 0);
+    border-left: 0px;
+  }
+
+  .time-col {
+    grid-column:1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(0, 0, 0);
+    border-left: 0px;
+  }
+
+  .monday-col {
+    grid-column:2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E0D0FB;
+    border: 1px solid rgb(0, 0, 0);
+    border-left: 0px;
+  }
+  .tuesday-col {
+    grid-column:3/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E0D0FB;
+    border: 1px solid rgb(0, 0, 0);
+    border-left: 0px;
+    
+  }
+  .wednesday-col {
+    grid-column:4/5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E0D0FB;
+    border: 1px solid rgb(0, 0, 0);
+    border-left: 0px;
+  }
+  .thursday-col {
+    grid-column:5/6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E0D0FB;
+    border: 1px solid rgb(0, 0, 0);
+    border-left: 0px;
+  }
+  .friday-col {
+    grid-column:6/7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E0D0FB;
+    border: 1px solid rgb(0, 0, 0);
+    border-left: 0px;
+    border-right: 0px;
+  }
+  .course-name {
+    font-size: 12px;
+    font-weight:bold;
+  }
+
+  .course-lecture {
+    font-size: 10px;
+  }
+  
+  .course-time {
+    font-size: 10px;
+  }
+  .first-course {
+    cursor: pointer;
+  }
+  .first-course-first-slot {
+    height: 60px;
+    background-color: #FF9AA2;
+    grid-column:2/3;
+  }
+  .first-course-second-slot {
+    height: 120px;
+    background-color: #FF9AA2;
+    grid-column:5/6;
+  }
+  .second-course {
+    cursor: pointer;
+  }
+  
+  .second-course-first-slot {
+    height: 60px;
+    background-color: #FFDAC1;
+    grid-column:5/6;
+  }
+
+  .second-course-second-slot {
+    height: 120px;
+    background-color: #FFDAC1;
+    grid-column:5/6;
+  }
+  .third-course{
+    height: 180px;
+    grid-column:2/3;
+    cursor: pointer;
+  }
+
+  .third-course-first-slot {
+    height: 180px;
+    background-color: #E2F0CB;
+  }
+  .third-course-first-slot:hover {
+    background-color: #c7d6ad;
+  }
+
+
+  #first-course-overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  #second-course-overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+  #third-course-overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+  #text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+  }
