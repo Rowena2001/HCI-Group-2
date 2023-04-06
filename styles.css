@@ -36,11 +36,11 @@
 }
 
 /* Page content style */
-.content {
+.content, .grid-item {
   width: 75%;
-  padding-top: 10px;
+  padding-top: 5px;
   padding-right: 200px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   padding-left: 200px;
 }
 
@@ -97,6 +97,20 @@ select {
     background-color: #ddd;
   }
 
+.button_disabled {
+  background-color: #ddd;
+  color: white;
+  font-size: 16px;
+  font-family: "Times New Roman";
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 5px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
   /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
   background-color: white;
@@ -142,4 +156,28 @@ select {
   content: "\2303";
   transform: rotate(360deg);
   color: black;
+}
+
+h1 {
+  font-size:22px
+}
+
+h2 {
+  font-size:16px
+}
+
+p {
+  font-size:15px;
+}
+
+.course_info {
+  background-color: #ddd;
+  overflow: hidden;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 10px;
+}
+
+.small {
+  font-size:14px;
 }

@@ -4,7 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    <title>My Schedule</title>
+    <style>
+    </style>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="builddraft.css">
     <link href="https://unpkg.com/treeflex/dist/css/treeflex.css" rel="stylesheet">
@@ -14,7 +16,7 @@
     <script src="seethrough.js"></script>
     <div class="topnav">
         <a href="home.html">Home</a>
-        <a href="myprofile  .html">My Profile</a>
+        <a href="myprofile.html">My Profile</a>
         <a class="active" href="builddraft.html">Build Draft</a>
         <a href="myschedule.html">My Schedule</a>
         <a href="mydrafts.html">My Drafts</a>
@@ -22,7 +24,174 @@
         <img src="images/logo.png" class="logo" alt="logo">
     </div>
     <div class="content">
-        insert selection stuff
+        <h1>Build Draft</h1>
+        <select id="semesterSelect">
+            <option value="Fall 2022">Summer 2023</option>
+            <option value="Winter 2022">Fall 2024</option>
+        </select>
+        <p id="selectedSemester"></p>
+    </div>
+    <div class="content">
+        <h1>Quick Add</h1>
+        <button class="button" onclick="addCourse3305()">CS3305A Operating Systems</button>
+    </div>
+    <div class="content"> 
+        <h1>Apply Filters</h1>
+        <label for="subjectFilter">Subject:</label>
+        <select id="subjectFilter">
+            <option value="">All</option>
+            <option value="Biology">Biology</option>
+            <option value="Classical Studies">Classical Studies</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="English">English Language and Literature</option>
+        </select>
+    <br><br>
+    <label for="yearFilter">Year:</label>
+    <select id="yearFilter">
+        <option value="">All</option>
+        <option value="First">First</option>
+        <option value="Second">Second</option>
+        <option value="Third">Third</option>
+        <option value="Fourth">Fourth</option>
+    </select>
+    <br><br>
+    <label for="campusFilter">Campus:</label>
+    <select id="campusFilter">
+        <option value="">All</option>
+        <option value="Kings">Kings</option>
+        <option value="Huron">Huron</option>
+        <option value="Main">Main</option>
+        <option value="Brescia">Brescia</option>
+    </select>
+    <br><br>
+    </div>
+    </div class="grid">
+    <div class="grid-item" data-subject="Computer Science" data-year="Second" data-campus="Main" id="2208_block">
+        <h2><strong class="purple">CS2208A Introduction to Computer Organzation and Architecture</strong></h2>
+        <div class="course_info">
+            <p><strong class="purple">Course Description</strong></p>
+            <p id="description1">This course gives an understanding of what a modern computer can do. It covers the internal representation of various data types and focuses on the architectural components of computers (how these components are interconnected and the nature of the information flow between them). Assembly language is used to reinforce these issues.</p>
+            <p><strong class="purple">Pre or Corequisites</strong></p>
+            <p>Prerequisite(s): Computer Science 1027A/B, Computer Science 1037A/B, or the former Computer Science 2101A/B, in each case with at least 65%; or Integrated Science 1001X with at least 60%.</p>
+            <p><strong class="purple">Class Hours</strong></p>
+            <p>Lectures Time & Place<br>&#8226;&nbsp;&nbsp;Tuesday 11:30 am - 1:30 pm at WSC-55<br>&#8226;&nbsp;&nbsp;Thursday 1:30 pm - 2:30 pm at WSC-55<br>Tutorials Time & Place<br>&#8226;&nbsp;&nbsp;Monday 1:30 pm - 2:30 pm at SSC-2050</p>
+            <p><strong class="purple">Student Review Summary</strong></p>
+            <p>Most-used words to describe this course: difficult, time-consuming, interesting.<br>52% of students enjoyed this course.<br>59% of students say this course is difficult.</p>
+        </div>
+        <br>
+        <button class="button_disabled">Add to Schedule</button><p class="small">You are currently taking this course.</p>
+    </div>
+    <div class="grid-item" data-subject="Biology" data-year="Second" data-campus="Main" id="bio1_block">
+        <h2><strong class="purple">2382B Cell Biology</strong></h2>
+        <div class="course_info">
+            <p><strong class="purple">Course Description</strong></p>
+            <p id="description1">Molecular and structural organization of cells in relation to function. Composition and dynamics of the plasma membrane and membrane-bound compartments in cells. Synthesis and trafficking of proteins. Cytoskeleton and cell motility. Membrane receptors in signal and energy transduction, cell-cell adhesion and recognition. Excitable membranes.</p>
+            <p><strong class="purple">Pre or Corequisites</strong></p>
+            <p>Prerequisite(s): A minimum mark of 60% in either Biology 1001A or Biology 1201A and a minimum mark of 60% in either Biology 1002B or Biology 1202B; Chemistry 1301A/B and 1302A/B or the former Chemistry 1010A/B and Chemistry 1200B. Integrated Sciencd 1001X with a minimum mark of 60% can be used as a prerequisite in place of Biology 1002B and Chemistry 1302A/B. </p>
+            <p><strong class="purple">Class Hours</strong></p>
+            <p>Monday 3:30 pm - 5:30 pm<br>Wednesday 2:30pm - 3:30 pm</p>
+            <p><strong class="purple">Student Review Summary</strong></p>
+            <p>Most-used words to describe this course: fun, cool, interesting.<br>72% of students enjoyed this course.<br>32% of students say this course is difficult.</p>
+        </div>
+        <br>
+        <button class="button_disabled">Add to Schedule</button><p class="small">You do not have the prerequesites for this course.</p>
+    </div>
+    <div class="grid-item" data-subject="English" data-year="Third" data-campus="Main" id="eng_block">
+        <h2><strong class="purple">3200F Feminist Literary Theory</strong></h2>
+        <div class="course_info">
+            <p><strong class="purple">Course Description</strong></p>
+            <p id="description1">An introduction to critical debates in twentieth-century feminist literary theory. Students will study (1) the diversity of feminist approaches to literature, literary production, the politics of language, questions of genre and subjectivity; and (2) the intersections among feminist literary theories, postcolonialism, Marxism, anti-racist criticism, queer theory, and post-structuralism.</p>
+            <p><strong class="purple">Pre or Corequisites</strong></p>
+            <p>Prerequisite(s): At least 60% in 1.0 of English 1020-1999 or permission of the Department.</p>
+            <p><strong class="purple">Class Hours</strong></p>
+            <p>Thursday 9:30 am - 11:30 am</p>
+            <p><strong class="purple">Student Review Summary</strong></p>
+            <p>Most-used words to describe this course: fun, empowering, interesting.<br>77% of students enjoyed this course.<br>28% of students say this course is difficult.</p>
+        </div>
+        <br>
+        <button class="button_disabled">Add to Schedule</button><p class="small">You do not have the prerequesites for this course.</p>
+    </div>
+    <div class="grid-item" data-subject="Biology" data-year="Third" data-campus="Main" id="bio2_block">
+        <h2><strong class="purple">3218G Biology of the Fungi</strong></h2>
+        <div class="course_info">
+            <p><strong class="purple">Course Description</strong></p>
+            <p id="description1">This course provides an introduction to the fungi with emphasis on their biology, ecology, genetics and interactions with other organisms, including humans and their crops. Emphasis is on the true fungi, including yeasts, with brief treatment of other fungus-like microbes of the Kingdoms Chromalveolata and Amoebozoa.</p>
+            <p><strong class="purple">Pre or Corequisites</strong></p>
+            <p>Prerequisite(s): At least 1.0 course in Biology at the 2200-level or higher.</p>
+            <p><strong class="purple">Class Hours</strong></p>
+            <p>Monday 3:30 pm - 5:30 pm</p>
+            <p><strong class="purple">Student Review Summary</strong></p>
+            <p>Most-used words to describe this course: fun, cool, interesting.<br>67% of students enjoyed this course.<br>22% of students say this course is difficult.</p>
+        </div>
+        <br>
+        <button class="button_disabled">Add to Schedule</button><p class="small">You do not have the prerequesites for this course.</p>
+    </div>
+    <div class="grid-item" data-subject="Computer Science" data-year="Third" data-campus="Main" id="3305_block">
+        <h2><strong class="purple">CS3305A Operating Systems</strong></h2>
+        <div class="course_info">
+            <p><strong class="purple">Course Description</strong></p>
+            <p>This course presents fundamental concepts related to the design and implementation of operating
+                systems. Topics includes basic operating system structure, process scheduling, process and thread
+                synchronization and concurrency, memory management, file systems and storage servers, and if time
+                permits a few “hot” topics.
+            </p>
+            <p><strong class="purple">Pre or Corequisites</strong></p>
+            <p>Prerequisite(s): Either (Computer Science 2208A/B and 2211A/B) or (Computer Science 2101A/B and 2208A/B) or
+                (Computer Science 2210A/B, 2211A/B, ECE 3375A/B, and registration in the fourth year of a BESc
+                program in Computer Engineering or Mechatronic Systems Engineering.)</p>
+            <p><strong class="purple">Class Hours</strong></p>
+            <p>Monday 9:30 am - 10:30 am at SEB-1200<br>Wednesday 9:30 am - 11:30 am at SEB-1200</p>
+            <p><strong class="purple">Student Review Summary</strong></p>
+            <p>Most-used words to describe this course: difficult, time-consuming, interesting.<br>49% of students enjoyed this course.<br>51% of students say this course is difficult.</p>
+        </div>
+        <br>
+        <button onclick="addCourse3305()" class="button">Add to Schedule</button>
+    </div>
+    <div class="grid-item" data-subject="Computer Science" data-year="Third" data-campus="Main" id="3350_block">
+        <h2><strong class="purple">CS3350A Computer Organization</strong></h2>
+        <div class="course_info">
+            <p><strong class="purple">Course Description</strong></p>
+            <p>The course is designed to give students an appreciation of hardware, its design, its implementation, and the impact of all of this on how software runs on the hardware. We will look at the general topics:
+                <br>&#8226;&nbsp;&nbsp;Hardware Abstractions
+                <br>&#8226;&nbsp;&nbsp;Qualitative Measures and Performance Metrics
+                <br>&#8226;&nbsp;&nbsp;Logical Circuits
+                <br>&#8226;&nbsp;&nbsp;Instruction Set Architectures (MIPS)
+                <br>&#8226;&nbsp;&nbsp;CPU data path and Pipelining
+                <br>&#8226;&nbsp;&nbsp;Multi-core architectures, parallelism
+            </p>
+            <p><strong class="purple">Pre or Corequisites</strong></p>
+            <p>Prerequisite(s): COMP 2208, COMP 2210, COMP 2211, and either COMP 2209 or COMP 2101<br>Antirequisite(s): ECE 3375</p>
+            <p><strong class="purple">Class Hours</strong></p>
+            <p>Tuesday 3:00 pm - 4:00 pm at MC-110<br>Thursday 3:00 pm - 5:00 pm at SSC-2050</p>
+            <p><strong class="purple">Student Review Summary</strong></p>
+            <p>Most-used words to describe this course: difficult, time-consuming, interesting.<br>49% of students enjoyed this course.<br>51% of students say this course is difficult.</p>
+        </div>
+        <br>
+        <button onclick="addCourse3350()" class="button">Add to Schedule</button>
+    </div>
+    <div class="grid-item" data-subject="Computer Science" data-year="Fourth" data-campus="Main" data-keyword="4474" id="4474_block">
+        <h2><strong class="purple">CS4474B Computer Organization</strong></h2>
+        <div class="course_info">
+            <p><strong class="purple">Course Description</strong></p>
+            <p>This course provides an overview of a number of areas in human-computer interaction (HCI). Broadly speaking, HCI is an
+                interdisciplinary area concerned with the design, evaluation, and implementation of interactive systems for human use and
+                with the study of major phenomena surrounding them. HCI addresses any interaction with computers by humans, as
+                developers or as users, as individuals or as groups. On completion of the course, students are expected to have theoretical
+                knowledge of and practical experience in the fundamental aspects of designing, implementing, and evaluating interactive
+                systems that are useful and usable. Design of usable technology draws extensively on knowledge of informatics, cognition,
+                communication, and computation. It is expected that students will become familiar with some of the literature in HCI and
+                develop sufficient background in HCI issues to do more advanced work in this area.
+            </p>
+            <p><strong class="purple">Pre or Corequisites</strong></p>
+            <p>Prerequisite(s): CS3307</p>
+            <p><strong class="purple">Class Hours</strong></p>
+            <p>Monday 2:30 pm - 5:30 pm at SEB-1200</p>
+            <p><strong class="purple">Student Review Summary</strong></p>
+            <p>Most-used words to describe this course: fun, relevant, interesting.<br>59% of students enjoyed this course.<br>31% of students say this course is difficult.</p>
+        </div>
+        <br>
+        <button onclick="addCourse4474()" class="button">Add to Schedule</button>
+    </div>
     </div>
     <div class="grid-container">
         <div class="grid">
@@ -40,14 +209,14 @@
             <div class="time-col">9:00 AM</div>
             <div class="time-col">9:30 AM</div>
             <div class="first-course">
-                <div class="first-course-first-slot" onclick="firston()">
+                <div class="first-course-first-slot" onclick="firston()" id="first3305" hidden>
                     <div class="course-name">COMPSCI 3305</div>
                     <div class="course-lecture"> LEC 001</div>
                     <div class="course-time">9:30-10:30</div>
                 </div>
             </div>
             <div></div>
-            <div class="first-course" onclick="firston()">
+            <div class="first-course" onclick="firston()" id="second3305" hidden>
                 <div class="first-course-second-slot">
                     <div class="course-name">COMPSCI 3305</div>
                     <div class="course-lecture"> LEC 001</div>
@@ -66,7 +235,7 @@
             <div class="time-col">2:30 PM</div>
             <div class="time-col">3:00 PM</div>
             <div></div>
-            <div class="second-course" onclick="secondon()">
+            <div class="second-course" onclick="secondon()" id="first3350" hidden>
                 <div class="second-course-first-slot">
                     <div class="course-name">COMPSCI 3350</div>
                     <div class="course-lecture"> LEC 001</div>
@@ -74,7 +243,7 @@
                 </div>
             </div>
             <div></div>
-            <div class="second-course" onclick="secondon()">
+            <div class="second-course" onclick="secondon()" id="second3350" hidden>
                 <div class="second-course-second-slot">
                     <div class="course-name">COMPSCI 3350</div>
                     <div class="course-lecture"> LEC 001</div>
@@ -125,7 +294,7 @@
             <div class="third-course" id="drag-first" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div id="drag-div" class="third-course-first-slot" 
                 draggable="true" ondragstart="drag(event)"
-                ondragend="dragend(event)" onclick="thirdon()">
+                ondragend="dragend(event)" onclick="thirdon()" hidden>
                     <div class="course-name">COMPSCI 4474</div>
                     <div class="course-lecture"> LEC 001</div>
                     <div class="course-time" id="drag-item">2:30-5:30</div>
@@ -329,6 +498,82 @@
 </html>
 
 <script>
+
+// Get the filter elements
+const subjectFilter = document.getElementById('subjectFilter');
+const yearFilter = document.getElementById('yearFilter');
+const campusFilter = document.getElementById('campusFilter');
+const searchInput = document.getElementById("searchInput");
+
+
+// Get all of the grid items
+const gridItems = document.querySelectorAll('.grid-item');
+
+// Add event listeners to the filter elements
+subjectFilter.addEventListener('change', updateGrid);
+yearFilter.addEventListener('change', updateGrid);
+campusFilter.addEventListener('change', updateGrid);
+searchInput.addEventListener("keyup", filterCards);
+function filterCards() {
+  const input = document.getElementById("searchInput");
+  const filterText = input.value.toUpperCase();
+  const cards = document.getElementsByClassName("card");
+
+  for (let i = 0; i < cards.length; i++) {
+    const title = cards[i].querySelector(".title").textContent.toUpperCase();
+    const description = cards[i].querySelector(".description").textContent.toUpperCase();
+
+    if (title.indexOf(filterText) > -1 || description.indexOf(filterText) > -1) {
+      cards[i].style.display = "";
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+}
+
+// Update the grid based on the selected filters
+function updateGrid() {
+  // Get the currently selected filter values
+  const selectedSubject = subjectFilter.value;
+  const selectedYear = yearFilter.value;
+  const selectedCampus = campusFilter.value;
+
+  // Loop through all of the grid items
+  for (let i = 0; i < gridItems.length; i++) {
+    const item = gridItems[i];
+
+    // Check if the item matches the selected filters
+    const itemSubject = item.getAttribute('data-subject');
+    const itemYear = item.getAttribute('data-year');
+    const itemCampus = item.getAttribute('data-campus');
+
+    const matchesSubject = selectedSubject === '' || selectedSubject === itemSubject;
+    const matchesYear = selectedYear === '' || selectedYear === itemYear;
+    const matchesCampus = selectedCampus === '' || selectedCampus === itemCampus;
+
+    // Show or hide the item based on the filter matches
+    if (matchesSubject && matchesYear && matchesCampus) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  }
+}
+
+function addCourse3305() {
+    document.getElementById("first3305").removeAttribute("hidden");
+    document.getElementById("second3305").removeAttribute("hidden");
+}
+
+function addCourse3350() {
+    document.getElementById("first3350").removeAttribute("hidden");
+    document.getElementById("second3350").removeAttribute("hidden");
+}
+
+function addCourse4474() {
+    document.getElementById("drag-div").removeAttribute("hidden");
+}
+
 function signout() {
     var val = confirm("Are you sure you want to sign out?");
     if(val == true ) {
