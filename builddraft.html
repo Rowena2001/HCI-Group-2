@@ -36,37 +36,41 @@
         <button class="button" onclick="addCourse3305()">CS3305A Operating Systems</button>
     </div>
     <div class="content"> 
-        <h1>Apply Filters</h1>
-        <label for="subjectFilter">Subject:</label>
+        <h1>Course Search</h1>
+        <label for="subjectFilter">Select a subject to start your course search:</label>
         <select id="subjectFilter">
+            <option selected disabled hidden>Subject</option>
             <option value="">All</option>
             <option value="Biology">Biology</option>
             <option value="Classical Studies">Classical Studies</option>
             <option value="Computer Science">Computer Science</option>
             <option value="English">English Language and Literature</option>
         </select>
-    <br><br>
-    <label for="yearFilter">Year:</label>
-    <select id="yearFilter">
-        <option value="">All</option>
-        <option value="First">First</option>
-        <option value="Second">Second</option>
-        <option value="Third">Third</option>
-        <option value="Fourth">Fourth</option>
-    </select>
-    <br><br>
-    <label for="campusFilter">Campus:</label>
-    <select id="campusFilter">
-        <option value="">All</option>
-        <option value="Kings">Kings</option>
-        <option value="Huron">Huron</option>
-        <option value="Main">Main</option>
-        <option value="Brescia">Brescia</option>
-    </select>
-    <br><br>
+        <br><br>
+    </div>
+    <div class="content" id="filters" hidden>
+        <h2>Apply Filters</h2>
+        <label for="yearFilter">Year:</label>
+        <select id="yearFilter">
+            <option value="">All</option>
+            <option value="First">First</option>
+            <option value="Second">Second</option>
+            <option value="Third">Third</option>
+            <option value="Fourth">Fourth</option>
+        </select>
+        <br><br>
+        <label for="campusFilter">Campus:</label>
+        <select id="campusFilter">
+            <option value="">All</option>
+            <option value="Kings">Kings</option>
+            <option value="Huron">Huron</option>
+            <option value="Main">Main</option>
+            <option value="Brescia">Brescia</option>
+        </select>
+        <br><br>
     </div>
     </div class="grid">
-    <div class="grid-item" data-subject="Computer Science" data-year="Second" data-campus="Main" id="2208_block">
+    <div class="grid-item" data-subject="Computer Science" data-year="Second" data-campus="Main" id="2208_block" hidden>
         <h2><strong class="purple">CS2208A Introduction to Computer Organzation and Architecture</strong></h2>
         <div class="course_info">
             <p><strong class="purple">Course Description</strong></p>
@@ -81,7 +85,7 @@
         <br>
         <button class="button_disabled">Add to Schedule</button><p class="small">You are currently taking this course.</p>
     </div>
-    <div class="grid-item" data-subject="Biology" data-year="Second" data-campus="Main" id="bio1_block">
+    <div class="grid-item" data-subject="Biology" data-year="Second" data-campus="Main" id="bio1_block" hidden>
         <h2><strong class="purple">2382B Cell Biology</strong></h2>
         <div class="course_info">
             <p><strong class="purple">Course Description</strong></p>
@@ -96,7 +100,7 @@
         <br>
         <button class="button_disabled">Add to Schedule</button><p class="small">You do not have the prerequesites for this course.</p>
     </div>
-    <div class="grid-item" data-subject="English" data-year="Third" data-campus="Main" id="eng_block">
+    <div class="grid-item" data-subject="English" data-year="Third" data-campus="Main" id="eng_block" hidden>
         <h2><strong class="purple">3200F Feminist Literary Theory</strong></h2>
         <div class="course_info">
             <p><strong class="purple">Course Description</strong></p>
@@ -111,7 +115,7 @@
         <br>
         <button class="button_disabled">Add to Schedule</button><p class="small">You do not have the prerequesites for this course.</p>
     </div>
-    <div class="grid-item" data-subject="Biology" data-year="Third" data-campus="Main" id="bio2_block">
+    <div class="grid-item" data-subject="Biology" data-year="Third" data-campus="Main" id="bio2_block" hidden>
         <h2><strong class="purple">3218G Biology of the Fungi</strong></h2>
         <div class="course_info">
             <p><strong class="purple">Course Description</strong></p>
@@ -126,7 +130,7 @@
         <br>
         <button class="button_disabled">Add to Schedule</button><p class="small">You do not have the prerequesites for this course.</p>
     </div>
-    <div class="grid-item" data-subject="Computer Science" data-year="Third" data-campus="Main" id="3305_block">
+    <div class="grid-item" data-subject="Computer Science" data-year="Third" data-campus="Main" id="3305_block" hidden>
         <h2><strong class="purple">CS3305A Operating Systems</strong></h2>
         <div class="course_info">
             <p><strong class="purple">Course Description</strong></p>
@@ -147,7 +151,7 @@
         <br>
         <button onclick="addCourse3305()" class="button">Add to Schedule</button>
     </div>
-    <div class="grid-item" data-subject="Computer Science" data-year="Third" data-campus="Main" id="3350_block">
+    <div class="grid-item" data-subject="Computer Science" data-year="Third" data-campus="Main" id="3350_block" hidden>
         <h2><strong class="purple">CS3350A Computer Organization</strong></h2>
         <div class="course_info">
             <p><strong class="purple">Course Description</strong></p>
@@ -169,7 +173,7 @@
         <br>
         <button onclick="addCourse3350()" class="button">Add to Schedule</button>
     </div>
-    <div class="grid-item" data-subject="Computer Science" data-year="Fourth" data-campus="Main" data-keyword="4474" id="4474_block">
+    <div class="grid-item" data-subject="Computer Science" data-year="Fourth" data-campus="Main" data-keyword="4474" id="4474_block" hidden>
         <h2><strong class="purple">CS4474B Computer Organization</strong></h2>
         <div class="course_info">
             <p><strong class="purple">Course Description</strong></p>
@@ -498,6 +502,18 @@
 </html>
 
 <script>
+
+document.addEventListener('DOMContentLoaded', init, false);
+
+function init() {
+    var subject = document.getElementById('subjectFilter');
+    subject.addEventListener('change', select, false);
+}
+
+function select() {
+    var filters = document.getElementById("filters");
+    filters.removeAttribute("hidden");
+}
 
 // Get the filter elements
 const subjectFilter = document.getElementById('subjectFilter');
