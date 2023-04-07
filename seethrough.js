@@ -1,11 +1,11 @@
 function firston() {
-    document.getElementById("first-course-overlay").style.display = "block";
+    document.getElementById("first-course-overlay").style.display = "flex";
   }
   function secondon() {
-    document.getElementById("second-course-overlay").style.display = "block";
+    document.getElementById("second-course-overlay").style.display = "flex";
   }
   function thirdon() {
-    document.getElementById("third-course-overlay").style.display = "block";
+    document.getElementById("third-course-overlay").style.display = "flex";
   }
   
   function firstoff() {
