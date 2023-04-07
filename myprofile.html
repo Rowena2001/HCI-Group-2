@@ -17,11 +17,9 @@
 <body>
     <center>
     <div class="topnav">
-        <a href="home.html">Home</a>
+        <a href="index.html">Home</a>
         <a class="active" href="myprofile.html">My Profile</a>
         <a href="builddraft.html">Build Draft</a>
-        <a href="myschedule.html">My Schedule</a>
-        <a href="mydrafts.html">My Drafts</a>
         <a onclick="signout()">Sign Out</a>
         <img src="images/logo.png" class="logo" alt="logo">
     </div>
@@ -129,7 +127,7 @@
             <span class="fa fa-star checked" id="star5"></span>
         </div>
         <br>
-        <button class="button" onclick="submitReview()">Submit Review</button>
+        <button class="button" id="submitbutton">Submit Review</button>
         </div>
     </div>
 </body>
@@ -142,6 +140,8 @@
     function init() {
         var sem = document.getElementById('sem');
         sem.addEventListener('change', semselect, true);
+        const submit = document.getElementById('submitbutton');
+        submit.addEventListener("click", submitReview, true);
 
         document.getElementById("star1").addEventListener("click", star1Select, true);
         document.getElementById("star2").addEventListener("click", star2Select, true);
@@ -168,6 +168,7 @@
         var courses = document.getElementById("courses");
         var selected = courses.value;
         document.getElementById(selected).setAttribute("hidden", "hidden");
+        alert("Rating for " + selected + " submitted!");
     }
 
     function star1Select() {
