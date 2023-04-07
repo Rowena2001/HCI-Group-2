@@ -24,79 +24,6 @@ h1 {
     </style> -->
     <script>
 
-      document.addEventListener('DOMContentLoaded', init, false);
-
-      function init() {
-        var sem = document.getElementById('sem');
-        sem.addEventListener('change', semselect, true);
-
-        document.getElementById("star1").addEventListener("click", star1Select, true);
-        document.getElementById("star2").addEventListener("click", star2Select, true);
-        document.getElementById("star3").addEventListener("click", star3Select, true);
-        document.getElementById("star4").addEventListener("click", star4Select, true);
-        document.getElementById("star5").addEventListener("click", star5Select, true);
-
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-        for (i = 0; i < acc.length; i++) {
-          acc[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.maxHeight) {
-              panel.style.maxHeight = null;
-            } else {
-              panel.style.maxHeight = panel.scrollHeight + "px";
-            }
-          });
-        }
-      }
-
-      function submitReview() {
-        var courses = document.getElementById("courses");
-        var selected = courses.value;
-        document.getElementById(selected).setAttribute("hidden", "hidden");
-      }
-
-      function star1Select() {
-        document.getElementById("star1").className = "fa fa-star checked";
-        document.getElementById("star2").className = "fa fa-star";
-        document.getElementById("star3").className = "fa fa-star";
-        document.getElementById("star4").className = "fa fa-star";
-        document.getElementById("star5").className = "fa fa-star";
-      }
-
-      function star2Select() {
-        document.getElementById("star1").className = "fa fa-star checked";
-        document.getElementById("star2").className = "fa fa-star checked";
-        document.getElementById("star3").className = "fa fa-star";
-        document.getElementById("star4").className = "fa fa-star";
-        document.getElementById("star5").className = "fa fa-star";
-      }
-
-      function star3Select() {
-        document.getElementById("star1").className = "fa fa-star checked";
-        document.getElementById("star2").className = "fa fa-star checked";
-        document.getElementById("star3").className = "fa fa-star checked";
-        document.getElementById("star4").className = "fa fa-star";
-        document.getElementById("star5").className = "fa fa-star";
-      }
-
-      function star4Select() {
-        document.getElementById("star1").className = "fa fa-star checked";
-        document.getElementById("star2").className = "fa fa-star checked";
-        document.getElementById("star3").className = "fa fa-star checked";
-        document.getElementById("star4").className = "fa fa-star checked";
-        document.getElementById("star5").className = "fa fa-star";
-      }
-
-      function star5Select() {
-        document.getElementById("star1").className = "fa fa-star checked";
-        document.getElementById("star2").className = "fa fa-star checked";
-        document.getElementById("star3").className = "fa fa-star checked";
-        document.getElementById("star4").className = "fa fa-star checked";
-        document.getElementById("star5").className = "fa fa-star checked";
-      }
-
       function semselect() {
         var sem = document.getElementById('sem');
         var one = document.getElementById('1');
@@ -189,8 +116,8 @@ h1 {
       review5.innerHTML = "Most-used words to describe this course: easy, fun, interesting.<br>42% of students enjoyed this course.<br>52% of students say this course is difficult.";
 }
 };
-    </script>
-  </head>
+</script>
+</head>
 
 
 
@@ -941,6 +868,64 @@ h1 {
       </div>
 
       <script>
+        document.addEventListener('DOMContentLoaded', init, false);
+
+        function init() {
+          const submit = document.getElementById('submitbutton');
+          submit.addEventListener("click", submitReview, true);
+
+          document.getElementById("star1").addEventListener("click", star1Select);
+          document.getElementById("star2").addEventListener("click", star2Select);
+          document.getElementById("star3").addEventListener("click", star3Select);
+          document.getElementById("star4").addEventListener("click", star4Select);
+          document.getElementById("star5").addEventListener("click", star5Select);
+        }
+
+        function submitReview() {
+          var courses = document.getElementById("courses");
+          var selected = courses.value;
+          document.getElementById(selected).setAttribute("hidden", "hidden");
+          alert("Rating for " + selected + " submitted!");
+        }
+        function star1Select() {
+          document.getElementById("star1").className = "fa fa-star checked";
+          document.getElementById("star2").className = "fa fa-star";
+          document.getElementById("star3").className = "fa fa-star";
+          document.getElementById("star4").className = "fa fa-star";
+          document.getElementById("star5").className = "fa fa-star";
+        }
+
+        function star2Select() {
+          document.getElementById("star1").className = "fa fa-star checked";
+          document.getElementById("star2").className = "fa fa-star checked";
+          document.getElementById("star3").className = "fa fa-star";
+          document.getElementById("star4").className = "fa fa-star";
+          document.getElementById("star5").className = "fa fa-star";
+        }
+
+        function star3Select() {
+          document.getElementById("star1").className = "fa fa-star checked";
+          document.getElementById("star2").className = "fa fa-star checked";
+          document.getElementById("star3").className = "fa fa-star checked";
+          document.getElementById("star4").className = "fa fa-star";
+          document.getElementById("star5").className = "fa fa-star";
+        }
+
+        function star4Select() {
+          document.getElementById("star1").className = "fa fa-star checked";
+          document.getElementById("star2").className = "fa fa-star checked";
+          document.getElementById("star3").className = "fa fa-star checked";
+          document.getElementById("star4").className = "fa fa-star checked";
+          document.getElementById("star5").className = "fa fa-star";
+        }
+
+        function star5Select() {
+          document.getElementById("star1").className = "fa fa-star checked";
+          document.getElementById("star2").className = "fa fa-star checked";
+          document.getElementById("star3").className = "fa fa-star checked";
+          document.getElementById("star4").className = "fa fa-star checked";
+          document.getElementById("star5").className = "fa fa-star checked";
+        }
 
         // Get the filter elements
         const subjectFilter = document.getElementById('subjectFilter');
@@ -1057,35 +1042,36 @@ h1 {
       <!-- added that above ^^ -->
 
       <!-- Rate Courses Interaction -->
-      <h1>Rate Courses</h1>
-      <div class="selectdiv">
+    </div>
+    <h1>Rate Courses</h1>
+    <div class="selectdiv">
         <label for="faculty" class="purple"><strong>Please select a course to review:</strong></label>
         <select class="dropdown" name="courses" id="courses" >
-          <option value="calc1000" id="calc1000">Calc1000 Calculus I</option>
-          <option value="classics1000" id="classics1000">Classics1000 Greek and Roman Civilization</option>
-          <option value="econ1021" id="econ1021">Econ1021 Principles of Microeconomics</option>
-          <option value="econ1022" id="econ1022">Econ1022 Principles of Macroeconomics</option>
-          <option value="cs1026" id="cs1026">CS1026 Computer Science Fundamentals I</option>
-          <option value="cs1027" id="cs1027">CS1027 Computer Science Fundamentals II</option>
-          <option value="aplmath1201" id="aplmath1202">AplMath 1201 Calculus and Probability with Biological Applications</option>
-          <option value="bus1220" id="bus1220">Bus1220 Introduction to Business</option>
-          <option value="cs2208" id="cs2208">CS2208 Introduction to Computer Organization and Architecture</option>
-          <option value="cs2209" id="cs2209">CS2209 Applied Logic for Computer Science</option>
-          <option value="cs2210" id="cs2210">CS2210 Data Structures and Algorithms</option>
-          <option value="cs2211" id="cs2211">CS2211 Software Tools and Systems Programming</option>
-          <option value="stats2244" id="stats2244">Stats2244 Statistics for Science</option>
+            <option value="calc1000" id="calc1000">Calc1000 Calculus I</option>
+            <option value="classics1000" id="classics1000">Classics1000 Greek and Roman Civilization</option>
+            <option value="econ1021" id="econ1021">Econ1021 Principles of Microeconomics</option>
+            <option value="econ1022" id="econ1022">Econ1022 Principles of Macroeconomics</option>
+            <option value="cs1026" id="cs1026">CS1026 Computer Science Fundamentals I</option>
+            <option value="cs1027" id="cs1027">CS1027 Computer Science Fundamentals II</option>
+            <option value="aplmath1201" id="aplmath1202">AplMath 1201 Calculus and Probability with Biological Applications</option>
+            <option value="bus1220" id="bus1220">Bus1220 Introduction to Business</option>
+            <option value="cs2208" id="cs2208">CS2208 Introduction to Computer Organization and Architecture</option>
+            <option value="cs2209" id="cs2209">CS2209 Applied Logic for Computer Science</option>
+            <option value="cs2210" id="cs2210">CS2210 Data Structures and Algorithms</option>
+            <option value="cs2211" id="cs2211">CS2211 Software Tools and Systems Programming</option>
+            <option value="stats2244" id="stats2244">Stats2244 Statistics for Science</option>
         </select>
-      </div>
-      <p style="font-size:14px">You can only review courses that you have taken or that you are currently taking.</p>
-      <div>
+    </div>
+    <p class="small">You can only review courses that you have taken or that you are currently taking.</p>
+    <div>
         <span class="fa fa-star checked" id="star1"></span>
         <span class="fa fa-star checked" id="star2"></span>
         <span class="fa fa-star checked" id="star3"></span>
         <span class="fa fa-star checked" id="star4"></span>
         <span class="fa fa-star checked" id="star5"></span>
-      </div>
-      <br>
-      <button class="button" onclick="submitReview()">Submit Review</button>
+    </div>
+    <br>
+    <button class="button" id="submitbutton">Submit Review</button>
     </div>
 
 
