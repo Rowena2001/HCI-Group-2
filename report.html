@@ -1,0 +1,1138 @@
+<!-- HCI Project: Draft My Schedule -->
+<!-- Home -->
+
+<!DOCTYPE html>
+<html>
+
+
+
+  <head>
+
+    <title>DraftMySchedule Interactive Report</title> 
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+.checked {
+  color: orange;
+}
+    </style>
+    <!-- <style>
+h1 {
+  text-align: center;
+}
+    </style> -->
+    <script>
+
+      document.addEventListener('DOMContentLoaded', init, false);
+
+      function init() {
+        var sem = document.getElementById('sem');
+        sem.addEventListener('change', semselect, true);
+
+        document.getElementById("star1").addEventListener("click", star1Select, true);
+        document.getElementById("star2").addEventListener("click", star2Select, true);
+        document.getElementById("star3").addEventListener("click", star3Select, true);
+        document.getElementById("star4").addEventListener("click", star4Select, true);
+        document.getElementById("star5").addEventListener("click", star5Select, true);
+
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+          });
+        }
+      }
+
+      function submitReview() {
+        var courses = document.getElementById("courses");
+        var selected = courses.value;
+        document.getElementById(selected).setAttribute("hidden", "hidden");
+      }
+
+      function star1Select() {
+        document.getElementById("star1").className = "fa fa-star checked";
+        document.getElementById("star2").className = "fa fa-star";
+        document.getElementById("star3").className = "fa fa-star";
+        document.getElementById("star4").className = "fa fa-star";
+        document.getElementById("star5").className = "fa fa-star";
+      }
+
+      function star2Select() {
+        document.getElementById("star1").className = "fa fa-star checked";
+        document.getElementById("star2").className = "fa fa-star checked";
+        document.getElementById("star3").className = "fa fa-star";
+        document.getElementById("star4").className = "fa fa-star";
+        document.getElementById("star5").className = "fa fa-star";
+      }
+
+      function star3Select() {
+        document.getElementById("star1").className = "fa fa-star checked";
+        document.getElementById("star2").className = "fa fa-star checked";
+        document.getElementById("star3").className = "fa fa-star checked";
+        document.getElementById("star4").className = "fa fa-star";
+        document.getElementById("star5").className = "fa fa-star";
+      }
+
+      function star4Select() {
+        document.getElementById("star1").className = "fa fa-star checked";
+        document.getElementById("star2").className = "fa fa-star checked";
+        document.getElementById("star3").className = "fa fa-star checked";
+        document.getElementById("star4").className = "fa fa-star checked";
+        document.getElementById("star5").className = "fa fa-star";
+      }
+
+      function star5Select() {
+        document.getElementById("star1").className = "fa fa-star checked";
+        document.getElementById("star2").className = "fa fa-star checked";
+        document.getElementById("star3").className = "fa fa-star checked";
+        document.getElementById("star4").className = "fa fa-star checked";
+        document.getElementById("star5").className = "fa fa-star checked";
+      }
+
+      function semselect() {
+        var sem = document.getElementById('sem');
+        var one = document.getElementById('1');
+        var description1 = document.getElementById('description1');
+        var prereqs1 = document.getElementById('prereqs1');
+        var hours1 = document.getElementById('hours1');
+        var review1 = document.getElementById('review1');
+
+        var two = document.getElementById('2');
+        var description2 = document.getElementById('description2');
+        var prereqs2 = document.getElementById('prereqs2');
+        var hours2 = document.getElementById('hours2');
+        var review2 = document.getElementById('review2');
+
+        var three = document.getElementById('3');
+        var description3 = document.getElementById('description3');
+        var prereqs3 = document.getElementById('prereqs3');
+        var hours3 = document.getElementById('hours3');
+        var review3 = document.getElementById('review3');
+
+        var four = document.getElementById('4');
+        var description4 = document.getElementById('description4');
+        var prereqs4 = document.getElementById('prereqs4');
+        var hours4 = document.getElementById('hours4');
+        var review4 = document.getElementById('review4');
+
+        var five = document.getElementById('5');
+        var description5 = document.getElementById('description5');
+        var prereqs5 = document.getElementById('prereqs5');
+        var hours5 = document.getElementById('hours5');
+        var review5 = document.getElementById('review5');
+
+
+        if(sem.value == "fall") {
+          one.innerHTML = '<strong class="purple">CS2208</strong> Introduction to Computer Organization and Architecture';
+          description1.innerHTML = "This course gives an understanding of what a modern computer can do. It covers the internal representation of various data types and focuses on the architectural components of computers (how these components are interconnected and the nature of the information flow between them). Assembly language is used to reinforce these issues.";
+          prereqs1.innerHTML = "Prerequisite(s): Computer Science 1027A/B, Computer Science 1037A/B, or the former Computer Science 2101A/B, in each case with at least 65%; or Integrated Science 1001X with at least 60%.";
+          hours1.innerHTML = "Lectures Time & Place<br>&#8226;&nbsp;&nbsp;Tuesday 11:30 am - 1:30 pm at WSC-55<br>&#8226;&nbsp;&nbsp;Thursday 1:30 pm - 2:30 pm at WSC-55<br>Tutorials Time & Place<br>&#8226;&nbsp;&nbsp;Monday 1:30 pm - 2:30 pm at SSC-2050";
+          review1.innerHTML = "Most-used words to describe this course: hard, time-consuming, interesting.<br>32% of students enjoyed this course.<br>67% of students say this course is difficult.";
+
+          two.innerHTML = '<strong class="purple">CS2209</strong> Applied Logic for Computer Science';
+          description2.innerHTML = "This course presents an introduction to mathematical logic with emphasis on methodologies and applications in Computer Science. Topics include propositional and predicate logic, methods for deductive reasoning, SAT solving, and programming languages based on logic.";
+          prereqs2.innerHTML = "Prerequisite(s): Either 1) Computer Science 1027A/B, Computer Science 1037A/B, Computer Science 2101A/B, Computer Science 2121A/B or Digital Humanities 2221A/B in each case with at least 65%, and 1.0 course with at least 60% in each from: Applied Mathematics 1201A/B, Applied Mathematics 1413, Calculus 1000A/B, Calculus 1301A/B, Calculus 1500A/B, Calculus 1501A/B, Mathematics 1600A/B; or 2) Integrated Science 1001X with at least 60%.";
+      hours2.innerHTML = "Tuesday and Thursday 9:30-10:30am MC 110<br>1 hour will occasionally be used as a tutorial or for quizzes (on Tuesdays or Thursdays)";
+      review2.innerHTML = "Most-used words to describe this course: easy, fun, interesting.<br>78% of students enjoyed this course.<br>8% of students say this course is difficult.";
+
+      three.innerHTML = '<strong class="purple">CS2210</strong> Data Structures and Algorithms';
+      description3.innerHTML = "The purpose of this course is to provide the students with solid foundations in the basic concepts of programming: Data structures and algorithms. The main objective of the course is to teach the students how to select and design data structures and algorithms that are appropriate for problems that they might encounter. This course is also about showing the correctness of algorithms and studying their computational complexities. This course offers the students a mixture of theoretical knowledge and practical experience. <br>The study of data structures and algorithms is carried out within an object-oriented framework. When implementations are considered, the Java programming language is used. Topics covered in this course include: <br>&#8226;&nbsp;&nbsp;Design and analysis of algorithms <br>&#8226;&nbsp;&nbsp;Time complexity and asymptotic notation <br>&#8226;&nbsp;&nbsp;Dictionaries and hash tables <br>&#8226;&nbsp;&nbsp;Trees, binary search trees, AVL trees, multi-way search trees, (2,4)-trees, and B-trees <br>&#8226;&nbsp;&nbsp;Graphs, graph traversals, and graph algorithms <br>&#8226;&nbsp;&nbsp;Sorting algorithms.";
+      prereqs3.innerHTML = "Prerequisite(s): Either Computer Science 1027A/B, Computer Science 1037A/B, the former Computer Science 2101A/B, Computer Science 2121A/B or Digital Humanities 2221A/B in each case with at least 65%, and 1.0 course with at least 60% in each from: Applied Mathematics 1201A/B, Numerical and Mathematical Methods 1411A/B, Numerical and Mathematical Methods 1412A/B, Calculus 1000A/B, Calculus 1301A/B, Calculus 1500A/B, Calculus 1501A/B, Mathematics 1600A/B, the former Applied Mathematics 1411A/B, the former Applied Mathematics 1412A/B, the former Applied Mathematics 1414A/B, the former Applied Mathematics 1413; or Integrated Science 1001X with at least 60%.";
+      hours3.innerHTML = "Tuesday 3:30 pm - 5:30 pm and Thursday 3:30 pm - 4:30 pm at NSC-1";
+      review3.innerHTML = "Most-used words to describe this course: relevant, difficult, interesting.<br>46% of students enjoyed this course.<br>55% of students say this course is difficult.";
+
+      four.innerHTML = '<strong class="purple">CS2211</strong> Software Tools and Systems Programming';
+      description4.innerHTML = "This course provides an introduction to software tools and systems level programming. Topics include: understanding how programs run (compilation, linking, and loading), an introduction to a complex operating system (UNIX), scripting languages, and the C programming language. As time permits, other topics will be chosen from: system calls, memory management, libraries, multi-component program organization and builds, version control, debuggers and profilers.";
+      prereqs4.innerHTML = "Prerequisite: Either Computer Science 1027a/b, 1037a/b, or 2101a/b with a grade of at least 65%; Or Integrated Science 1001X with a grade of at least 60%.<br>Antirequisites: Software Engineering 2250a/b and the former Software Engineering 201a/b";
+      hours4.innerHTML = "Tuesday 10:30am - 11:30am and Thursday 10:30am - 12:30pm, in SSC room 2050.";
+      review4.innerHTML = "Most-used words to describe this course: interesting, challenging, useful.<br>42% of students enjoyed this course.<br>52% of students say this course is difficult.";
+
+      five.innerHTML = '<strong class="purple">Stats2244</strong> Statistics for Science';
+      description5.innerHTML = "An introductory course in the application of statistical methods, intended for honours students in departments other than Statistical and Actuarial Sciences, Applied Mathematics, Mathematics, or students in the Faculty of Engineering. Topics include sampling, confidence intervals, analysis of variance, regression and correlation. Cannot be taken for credit in any module in Statistics, Actuarial Science, or Financial Modelling other than in Applied Statistics.";
+      prereqs5.innerHTML = "Prerequisite(s): 1.0 mathematics course, or equivalent numbered 1000 or above. Data Science 1000A/B or the former Statistical Sciences 1024A/B or Integrated Science 1001X can be used to meet 0.5 of the 1.0 mathematics course requirement.<br>Antirequisite(s): All other courses in Introductory Statistics (except Statistical Sciences 1023A/B, Data Science 1000A/B, or the former Statistical Sciences 1024A/B): Economics 2122A/B, Economics 2222A/B, Geography 2210A/B, Health Sciences 3801A/B, MOS 2242A/B, Psychology 2811A/B or the former Psychology 2810, Psychology 2801F/G or the former Psychology 2820E, Psychology 2830A/B, Psychology 2850A/B, Psychology 2851A/B, Social Work 2207A/B, Sociology 2205A/B, Statistical Sciences 2035, Statistical Sciences 2141A/B, Statistical Sciences 2143A/B, Statistical Sciences 2858A/B.";
+      hours5.innerHTML = "Mondays and Wednesdays, 10:30 am to 11:20 am in AHB 1R40";
+      review5.innerHTML = "Most-used words to describe this course: hard, fun, interesting.<br>42% of students enjoyed this course.<br>37% of students say this course is difficult.";
+}
+      else if(sem.value == "spring") {
+        one.innerHTML = '<strong class="purple">Writing2101</strong> Introduction to Expository Writing';
+        description1.innerHTML = "“An introduction to the basic principles and techniques of good writing. The course will emphasize practical work and the development of writing skills for a variety of subjects and disciplines.” By “practical work,” this course description from the calendar means to indicate that you will spend much of your time in this course writing, responding to the writing of others, and revising your work in light of the responses you receive to it. Consequently, in this course you will not only produce written texts, but also develop a critical eye for examining the written texts of others, both professionally-written and written by others in your class.";
+        prereqs1.innerHTML = "N/A";
+        review1.innerHTML = "Most-used words to describe this course: easy, relevant, fun.<br>62% of students enjoyed this course.<br>17% of students say this course is difficult.";
+
+        two.innerHTML = '<strong class="purple">Econ2167</strong> International Economics';
+        description2.innerHTML = "This course is divided into two parts; i) international trade and ii) international finance. International trade deals with the basis of trade between countries, the patterns of trade that evolve, the terms of trade and the gains that are garnered from trade. In order to explore these topics, a survey of the major trade theories will be discussed as well as the trade “policies” that nations implement. The international finance part of the course will consist of topics concerned with exchange rate determination and macroeconomic policy under different exchange rate regimes. We will also discuss the international flow of financial assets in the world economy.";
+      prereqs2.innerHTML = "Prerequisite(s): The prerequisites for this course are Economics 1021A/B and 1022A/B, or Economics2001A/B.<br>Antirequisite(s): Economics 2163a/b and/or 2164a/b.";
+      review2.innerHTML = "Most-used words to describe this course: cool, challenging, interesting.<br>72% of students enjoyed this course.<br>57% of students say this course is difficult.";
+
+      three.innerHTML = '<strong class="purple">CS2212</strong> Introduction to Software Engineering';
+      description3.innerHTML = "The informal approaches that most individual programmers use when writing small programs do not work very well when applied to the development of large pieces of software and team programming situations. Software engineering is a discipline that applies principles of traditional engineering to improve software, as well as its development and maintainability";
+      prereqs3.innerHTML = "Prerequisite(s): Computer Science 2210a/b and 2211a/b";
+      hours3.innerHTML = "Tuesday 11:30 am - 1:30 pm at WSC-55<br>Thursday 1:30 pm - 2:30 pm at WSC-55";
+      review3.innerHTML = "Most-used words to describe this course: difficult, fun, interesting.<br>38% of students enjoyed this course.<br>56% of students say this course is difficult.";
+
+      four.innerHTML = '<strong class="purple">CS2214</strong> Discrete Structures for Computing';
+      description4.innerHTML = "This course presents an introduction to the mathematical foundations of computer science, with an emphasis on mathematical reasoning, combinatorial analysis, discrete structures, applications and modeling, and algorithmic thinking. Topics may include sets, functions, relations, algorithms, number theory, matrices, mathematical reasoning, counting, graphs and trees.";
+      prereqs4.innerHTML = "Prerequisite(s): Either <br>1. Computer Science 1027A/B, Computer Science 1037A/B, or Computer Science 2101A/B, in each case with at least 65%, and 1.0 course with at least 60% in each from: Applied Mathematics 1201A/B, Applied Mathematics 1413, Calculus 1000A/B, Calculus 1301A/B, Calculus 1500A/B, Calculus 1501A/B, Mathematics 1600A/B.<br>or<br>2. Integrated Science 1001X with at least 60%.";
+      review4.innerHTML = "Most-used words to describe this course: easy, fun, interesting.<br>66% of students enjoyed this course.<br>22% of students say this course is difficult.";
+
+      five.innerHTML = '<strong class="purple">Classics2300</strong>  Sport and Recreation in the Ancient World';
+      description5.innerHTML = "The purpose of this class is to explore the topic of athletics and spectacle in ancient Greece and Rome with a view to its cultural and historical specifics, while also considering how the logic of competition in the ancient world relates to modern day practices. The course will rely on archaeology, art, poetry, primary literary sources, and secondary scholarship in order to reconstruct the historical practices and ideologies involved with ancient sports. In the autumn term, we will examine recreational and leisure activities available to people in the ancient Roman world; including sex work; Roman gladiatorial combat and other amphitheatrical events; chariot racing; eating and drinking; baths and bathing; gambling; and taverns and bars.";
+      prereqs5.innerHTML = "N/A";
+      review5.innerHTML = "Most-used words to describe this course: easy, fun, interesting.<br>42% of students enjoyed this course.<br>52% of students say this course is difficult.";
+}
+};
+    </script>
+  </head>
+
+
+
+  <body>
+
+    <h1 style="text-align: center;"> DraftMySchedule Interactive Report </h1>
+    <p style="text-align: center;">Team 2: Janice Xu, Jennifer Zhang, Keke Zhang, Zane Shad, Rowena Shi</p>
+
+    <!-- Executive Summary -->
+    <h1> Executive Summary </h1>
+    <h3>Goal</h3>
+    <p> Our system of improving DraftMySchedule aims to address the following goals – making clearer constraints when searching and adding courses,  simplifying user interactions when searching for courses, identifying completion of course requirements, and condensing information into one website. 
+    </p>
+
+    <h3>Features and Design Principles</h3>
+    <p>Through the drop-down menu and buttons, feedback is implemented as the buttons and list items turn a different shade to show users that the buttons are clickable. When a drop-down menu is selected, an accordion of options is displayed for the user to interact with. 
+    The navigation bar provides familiarity as it mimics the navigation and menu bars that existing user understand and know how to navigate. 
+    The course requirements checklist and progress bar enhances working memory as it provides a simple and intuitive interface that allows users to quickly and easily input and modify event details, without requiring them to constantly switch between screens or remember complex instructions.
+    To demonstrate Hick’s Law, with Quick Add, the application uses historic progressions that users commonly use for their module to suggest courses for students to take. This will decrease the amount of time to make decisions with the number of alternatives.
+    Utilizing filters when picking courses accounts for GIGO (garbage in garbage out) as if the user puts in an invalid input for the dropdown, they will get an incorrect output (ie. an incorrect course). 
+    The star rating course feature is an example of a virtual metaphor as the act of clicking the amount of stars is a metaphor for the concept of grading and evaluation. 
+    Through the see-through interface, a lens is used to display different modalities of data. This is seen when hovering above a course, it will show the past courses and future courses the selected course leads to.
+    Using the drag/drop feature achieves the pictorial superiority effect by displaying time slots visually rather than through text.</p>
+
+    <h3>Heuristic Evaluation</h3>
+    <p>Our team analyzes all 10 of the design heuristics and discover usability insights of individual elements and how the impact the overall user experience.</p>
+    <h3>Future Improvements</h3>
+    <p>In the future, our team sees the improved platform having the following additional capabilities: Display course availability when user clicks on current and other courses, set up direct connection with Student Center, build a better model to predict best Quick Add courses. </p>
+
+    <!-- Design Principles -->
+    <h2> Design Principles </h2>
+
+    <h3>Know Thy User</h3>
+
+    <p>As undergraduate students who are primary users of DraftMySchedule, the team utilized personal experiences and pain points to guide discussions on what interactions need to be added or improved. Our team had ongoing feedback sessions as a group to ensure we kept our design user-centered and eliminated as many extra steps and externalities for users. For example, discussing how a Quick Add feature can be designed to be the most beneficial for users as students have limited time and knowledge as to what the course progression is like for future years.</p>
+
+
+
+    <h3>Feedback</h3>
+    <p>When hovering over buttons and drop-down menus, the buttons and list items turn a different shade to show users that the buttons are clickable. When a drop-down menu is selected, an accordion of options is displayed for the user to interact with. As well, when the add course button is selected, the course block displays in a visual schedule for the user to picture their day.</p>
+    <center>
+      <div class="selectdiv">
+        <label for="faculty" class="purple"><strong>Please select a faculty:</strong></label>
+        <select class="dropdown" name="faculty" id="faculty">
+          <option value="science">Science</option>
+          <option value="arts">Arts and Humanities</option>
+        </select>
+      </div>
+      <button class="button" onclick="facselect()">Set Faculty</button>
+    </center>
+
+    <h3>Familiarity</h3>
+    <p>The redesign of DraftMySchedule follows the existing UI and color scheme very closely. It mimics the navigation and menu bars that existing user understand and know how to navigate. It also follows mental models of existing navigational bars so individuals know of this centralized are on the top of the page to navigate the site. </p>
+
+
+    <center>
+      <div class="topnav">
+        <a class="active" href="home.html">Home</a>
+        <a href="myprofile.html">My Profile</a>
+        <a href="builddraft.html">Build Draft</a>
+        <a href="myschedule.html">My Schedule</a>
+        <a href="mydrafts.html">My Drafts</a>
+        <a onclick="signout()">Sign Out</a>
+        <img src="images/logo.png" class="logo" alt="logo">
+      </div>
+    </center>
+
+    <!-- accordian course dropdown -->
+    <div>
+      <button class="accordion"><strong class="purple">CS2208</strong> Introduction to Computer Organization and Architecture</button>
+      <div class="panel">
+        <p><strong class="purple">Course Description</strong></p>
+        <p>This course gives an understanding of what a modern computer can do. 
+        It covers the internal representation of various data types and focuses 
+        on the architectural components of computers (how these components are 
+        interconnected and the nature of the information flow between them). 
+        Assembly language is used to reinforce these issues.</p>
+        <p><strong class="purple">Pre or Corequisites</strong></p>
+        <p>Prerequisite(s): Computer Science 1027A/B, Computer Science 1037A/B, 
+        or the former Computer Science 2101A/B, in each case with at least 65%; 
+        or Integrated Science 1001X with at least 60%.</p>
+        <p><strong class="purple">Class Hours</strong></p>
+        <p>Lectures Time & Place
+        <br>&#8226;&nbsp;&nbsp;Tuesday 11:30 am - 1:30 pm at WSC-55
+        <br>&#8226;&nbsp;&nbsp;Thursday 1:30 pm - 2:30 pm at WSC-55
+        <br>Tutorials Time & Place
+        <br>&#8226;&nbsp;&nbsp;Monday 1:30 pm - 2:30 pm at SSC-2050</p>
+        <p><strong class="purple">Student Review Summary</strong></p>
+        <p>Most-used words to describe this course: hard, time-consuming, interesting.
+        <br>32% of students enjoyed this course.
+        <br>67% of students say this course is difficult.
+        </p>
+      </div>
+
+      <button class="accordion"><strong class="purple">CS2209</strong> Applied Logic for Computer Science</button>
+      <div class="panel">
+        <p><strong class="purple">Course Description</strong></p>
+        <p>This course presents an introduction to mathematical logic with emphasis on methodologies and
+        applications in Computer Science. Topics include propositional and predicate logic, methods for
+        deductive reasoning, SAT solving, and programming languages based on logic.</p>
+        <p><strong class="purple">Pre or Corequisites</strong></p>
+        <p>Prerequisite(s): Either 1) Computer Science 1027A/B, Computer Science 1037A/B, Computer Science 2101A/B,
+        Computer Science 2121A/B or Digital Humanities 2221A/B in each case with at least 65%, and
+        1.0 course with at least 60% in each from: Applied Mathematics 1201A/B, Applied Mathematics
+        1413, Calculus 1000A/B, Calculus 1301A/B, Calculus 1500A/B, Calculus 1501A/B, Mathematics
+        1600A/B; or 2) Integrated Science 1001X with at least 60%.</p>
+        <p><strong class="purple">Class Hours</strong></p>
+        <p>Tuesday and Thursday 9:30-10:30am MC 110
+        <br>1 hour will occasionally be used as a tutorial or for quizzes (on Tuesdays or Thursdays)</p>
+        <p><strong class="purple">Student Review Summary</strong></p>
+        <p>Most-used words to describe this course: easy, fun, interesting.
+        <br>78% of students enjoyed this course.
+        <br>8% of students say this course is difficult.
+        </p>
+      </div>
+
+      <button class="accordion"><strong class="purple">CS2210</strong> Data Structures and Algorithms</button>
+      <div class="panel">
+        <p><strong class="purple">Course Description</strong></p>
+        <p>The purpose of this course is to provide the students with solid foundations in the basic concepts
+        of programming: Data structures and algorithms. The main objective of the course is to teach the
+        students how to select and design data structures and algorithms that are appropriate for problems
+        that they might encounter. This course is also about showing the correctness of algorithms and
+        studying their computational complexities. This course offers the students a mixture of theoretical
+        knowledge and practical experience.
+        <br>The study of data structures and algorithms is carried out within an object-oriented framework.
+        When implementations are considered, the Java programming language is used. Topics covered in
+        this course include:
+        <br>&#8226;&nbsp;&nbsp;Design and analysis of algorithms
+        <br>&#8226;&nbsp;&nbsp;Time complexity and asymptotic notation
+        <br>&#8226;&nbsp;&nbsp;Dictionaries and hash tables
+        <br>&#8226;&nbsp;&nbsp;Trees, binary search trees, AVL trees, multi-way search trees, (2,4)-trees, and B-trees
+        <br>&#8226;&nbsp;&nbsp;Graphs, graph traversals, and graph algorithms
+        <br>&#8226;&nbsp;&nbsp;Sorting algorithms.
+        </p>
+        <p><strong class="purple">Pre or Corequisites</strong></p>
+        <p>Prerequisite(s): Either Computer Science 1027A/B, Computer Science 1037A/B, the former Computer
+        Science 2101A/B, Computer Science 2121A/B or Digital Humanities 2221A/B in each
+        case with at least 65%, and 1.0 course with at least 60% in each from: Applied Mathematics 1201A/B, 
+        Numerical and Mathematical Methods 1411A/B, Numerical and Mathematical Methods 1412A/B, Calculus 1000A/B, 
+        Calculus 1301A/B, Calculus 1500A/B, Calculus 1501A/B, Mathematics 1600A/B, the former Applied 
+        Mathematics 1411A/B, the former Applied Mathematics 1412A/B, the former Applied Mathematics 1414A/B,
+        the former Applied Mathematics 1413; or Integrated Science 1001X with at least 60%.</p>
+        <p><strong class="purple">Class Hours</strong></p>
+        <p>Tuesday 3:30 pm - 5:30 pm and Thursday 3:30 pm - 4:30 pm at NSC-1</p>
+        <p><strong class="purple">Student Review Summary</strong></p>
+        <p>Most-used words to describe this course: relevant, difficult, interesting.
+        <br>46% of students enjoyed this course.
+        <br>55% of students say this course is difficult.
+        </p>
+      </div>
+
+      <button class="accordion"><strong class="purple">CS2211</strong> Software Tools and Systems Programming</button>
+      <div class="panel">
+        <p><strong class="purple">Course Description</strong></p>
+        <p>This course provides an introduction to software tools and systems level programming. 
+        Topics include: understanding how programs run (compilation, linking, and loading), an introduction 
+        to a complex operating system (UNIX), scripting languages, and the C programming language. 
+        As time permits, other topics will be chosen from: system calls, memory management, libraries, 
+        multi-component program organization and builds, version control, debuggers and profilers.
+        </p>
+        <p><strong class="purple">Pre or Corequisites</strong></p>
+        <p>Prerequisite: Either Computer Science 1027a/b, 1037a/b, or 2101a/b with a grade of at least 65%; 
+        Or Integrated Science 1001X with a grade of at least 60%.
+        <br>Antirequisites: Software Engineering 2250a/b and the former Software Engineering 201a/b
+        </p>
+        <p><strong class="purple">Class Hours</strong></p>
+        <p>Tuesday 10:30am - 11:30am and Thursday 10:30am - 12:30pm, in SSC room 2050.</p>
+        <p><strong class="purple">Student Review Summary</strong></p>
+        <p>Most-used words to describe this course: interesting, challenging, useful.
+        <br>42% of students enjoyed this course.
+        <br>52% of students say this course is difficult.
+        </p>
+      </div>
+
+      <button class="accordion"><strong class="purple">Stats2244</strong> Statistics for Science</button>
+      <div class="panel">
+        <p><strong class="purple">Course Description</strong></p>
+        <p>An introductory course in the application of statistical methods, intended for honours students in departments
+        other than Statistical and Actuarial Sciences, Applied Mathematics, Mathematics, or students in the Faculty
+        of Engineering. Topics include sampling, confidence intervals, analysis of variance, regression and correlation.
+        Cannot be taken for credit in any module in Statistics, Actuarial Science, or Financial Modelling other than in
+        Applied Statistics.</p>
+        <p><strong class="purple">Pre or Corequisites</strong></p>
+        <p>Prerequisite(s): 1.0 mathematics course, or equivalent numbered 1000 or above. Data Science 1000A/B or the former
+        Statistical Sciences 1024A/B or Integrated Science 1001X can be used to meet 0.5 of the 1.0 mathematics
+        course requirement.
+        <br>Antirequisite(s): All other courses in Introductory Statistics (except Statistical Sciences 1023A/B, Data Science 1000A/B, or
+        the former Statistical Sciences 1024A/B): Economics 2122A/B, Economics 2222A/B, Geography 2210A/B,
+        Health Sciences 3801A/B, MOS 2242A/B, Psychology 2811A/B or the former Psychology 2810, Psychology
+        2801F/G or the former Psychology 2820E, Psychology 2830A/B, Psychology 2850A/B, Psychology 2851A/B,
+        Social Work 2207A/B, Sociology 2205A/B, Statistical Sciences 2035, Statistical Sciences 2141A/B, Statistical
+        Sciences 2143A/B, Statistical Sciences 2858A/B.
+        </p>
+        <p><strong class="purple">Class Hours</strong></p>
+        <p>Mondays and Wednesdays, 10:30 am to 11:20 am in AHB 1R40</p>
+        <p><strong class="purple">Student Review Summary</strong></p>
+        <p>Most-used words to describe this course: hard, fun, interesting.
+        <br>42% of students enjoyed this course.
+        <br>37% of students say this course is difficult.
+        </p>
+      </div>
+
+      <script>
+
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+          });
+        }
+
+        function signout() {
+          var val = confirm("Are you sure you want to sign out?");
+          if(val == true ) {
+            window.location.href = 'signout.html';
+            return true;
+          } 
+          else {
+            return false;
+          }
+        }
+      </script>
+
+      <h3>Progressive Disclosure</h3>
+
+      <p>On the Build Draft page, there are different search bars, filters, and options users can select from through drop-down menus. Since the options are collapsed into a menu that is only discoverable when selected, the options are hidden from the user and reduce feelings of being overwhelmed.</p>
+
+      <h3> INSERT FILTER SEARCH BARS FROM BUILD DRAFT PAGE </h3>
+
+      <h3>Working Memory</h3>
+      <p>Designing interfaces that reduce the cognitive load on working memory can improve usability and user experience. The redesigned application provides a simple and intuitive interface that allows users to quickly and easily input and modify event details, without requiring them to constantly switch between screens or remember complex instructions. This is demonstrated through having the course requirements checklist for the users specific module, and having a progress bar to show how many more courses a user may need. This also reduces the number of external applications and websites a user needs to go on to gather information as it centralizes information from the Western site, Student Center, and DraftMySchedule.</p>
+      <img src="images/home_hs_cs.png" alt="HSP CS">
+
+
+      <h3>Gestalt Rules - Common Fate</h3>
+      <p>To organize visual information using meaningful patterns, the top menu bar is animated the same way when a user hovers over each section of the bar. This allows the user to understand the elements move together and change in the same way; when one page is selected, it will bring the user to another screen.</p>
+
+      <h3>Hick’s Law</h3>
+      <p>Due to the sheer amount of options for course and elective selection, users have to spend a lot of time to make decisions. With Quick Add, the application uses historic progressions that users commonly use for their module to suggest courses for students to take. This will decrease the amount of time to make decisions with the number of alternatives.<b>Refer to the interactive component below and use Quick Add.
+      </b></p>
+
+      <!-- quick add -->
+      <!-- HCI Project: Draft My Schedule -->
+      <!-- Build Draft -->
+
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>My Schedule</title>
+          <style>
+          </style>
+          <link rel="stylesheet" type="text/css" href="styles.css">
+          <link rel="stylesheet" type="text/css" href="builddraft.css">
+          <link href="https://unpkg.com/treeflex/dist/css/treeflex.css" rel="stylesheet">
+        </head>
+        <script src="dragdrop.js"></script>
+        <script src="seethrough.js"></script>
+        <div class="topnav">
+          <a href="home.html">Home</a>
+          <a href="myprofile.html">My Profile</a>
+          <a class="active" href="builddraft.html">Build Draft</a>
+          <a href="myschedule.html">My Schedule</a>
+          <a href="mydrafts.html">My Drafts</a>
+          <a onclick="signout()">Sign Out</a>
+          <img src="images/logo.png" class="logo" alt="logo">
+        </div>
+        <div class="content">
+          <h1>Build Draft</h1>
+          <select id="semesterSelect">
+            <option value="Fall 2022">Summer 2023</option>
+            <option value="Winter 2022">Fall 2024</option>
+          </select>
+          <p id="selectedSemester"></p>
+        </div>
+        <div class="content">
+          <h1>Quick Add</h1>
+          <button class="button" onclick="addCourse3305()">CS3305A Operating Systems</button>
+        </div>
+        <div class="content"> 
+          <h1>Apply Filters</h1>
+          <label for="subjectFilter">Subject:</label>
+          <select id="subjectFilter">
+            <option value="">All</option>
+            <option value="Biology">Biology</option>
+            <option value="Classical Studies">Classical Studies</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="English">English Language and Literature</option>
+          </select>
+          <br><br>
+          <label for="yearFilter">Year:</label>
+          <select id="yearFilter">
+            <option value="">All</option>
+            <option value="First">First</option>
+            <option value="Second">Second</option>
+            <option value="Third">Third</option>
+            <option value="Fourth">Fourth</option>
+          </select>
+          <br><br>
+          <label for="campusFilter">Campus:</label>
+          <select id="campusFilter">
+            <option value="">All</option>
+            <option value="Kings">Kings</option>
+            <option value="Huron">Huron</option>
+            <option value="Main">Main</option>
+            <option value="Brescia">Brescia</option>
+          </select>
+          <br><br>
+        </div>
+    </div class="grid">
+    <div class="grid-item" data-subject="Computer Science" data-year="Second" data-campus="Main" id="2208_block">
+      <h2><strong class="purple">CS2208A Introduction to Computer Organzation and Architecture</strong></h2>
+      <div class="course_info">
+        <p><strong class="purple">Course Description</strong></p>
+        <p id="description1">This course gives an understanding of what a modern computer can do. It covers the internal representation of various data types and focuses on the architectural components of computers (how these components are interconnected and the nature of the information flow between them). Assembly language is used to reinforce these issues.</p>
+        <p><strong class="purple">Pre or Corequisites</strong></p>
+        <p>Prerequisite(s): Computer Science 1027A/B, Computer Science 1037A/B, or the former Computer Science 2101A/B, in each case with at least 65%; or Integrated Science 1001X with at least 60%.</p>
+        <p><strong class="purple">Class Hours</strong></p>
+        <p>Lectures Time & Place<br>&#8226;&nbsp;&nbsp;Tuesday 11:30 am - 1:30 pm at WSC-55<br>&#8226;&nbsp;&nbsp;Thursday 1:30 pm - 2:30 pm at WSC-55<br>Tutorials Time & Place<br>&#8226;&nbsp;&nbsp;Monday 1:30 pm - 2:30 pm at SSC-2050</p>
+        <p><strong class="purple">Student Review Summary</strong></p>
+        <p>Most-used words to describe this course: difficult, time-consuming, interesting.<br>52% of students enjoyed this course.<br>59% of students say this course is difficult.</p>
+      </div>
+      <br>
+      <button class="button_disabled">Add to Schedule</button><p class="small">You are currently taking this course.</p>
+    </div>
+    <div class="grid-item" data-subject="Biology" data-year="Second" data-campus="Main" id="bio1_block">
+      <h2><strong class="purple">2382B Cell Biology</strong></h2>
+      <div class="course_info">
+        <p><strong class="purple">Course Description</strong></p>
+        <p id="description1">Molecular and structural organization of cells in relation to function. Composition and dynamics of the plasma membrane and membrane-bound compartments in cells. Synthesis and trafficking of proteins. Cytoskeleton and cell motility. Membrane receptors in signal and energy transduction, cell-cell adhesion and recognition. Excitable membranes.</p>
+        <p><strong class="purple">Pre or Corequisites</strong></p>
+        <p>Prerequisite(s): A minimum mark of 60% in either Biology 1001A or Biology 1201A and a minimum mark of 60% in either Biology 1002B or Biology 1202B; Chemistry 1301A/B and 1302A/B or the former Chemistry 1010A/B and Chemistry 1200B. Integrated Sciencd 1001X with a minimum mark of 60% can be used as a prerequisite in place of Biology 1002B and Chemistry 1302A/B. </p>
+        <p><strong class="purple">Class Hours</strong></p>
+        <p>Monday 3:30 pm - 5:30 pm<br>Wednesday 2:30pm - 3:30 pm</p>
+        <p><strong class="purple">Student Review Summary</strong></p>
+        <p>Most-used words to describe this course: fun, cool, interesting.<br>72% of students enjoyed this course.<br>32% of students say this course is difficult.</p>
+      </div>
+      <br>
+      <button class="button_disabled">Add to Schedule</button><p class="small">You do not have the prerequesites for this course.</p>
+    </div>
+    <div class="grid-item" data-subject="English" data-year="Third" data-campus="Main" id="eng_block">
+      <h2><strong class="purple">3200F Feminist Literary Theory</strong></h2>
+      <div class="course_info">
+        <p><strong class="purple">Course Description</strong></p>
+        <p id="description1">An introduction to critical debates in twentieth-century feminist literary theory. Students will study (1) the diversity of feminist approaches to literature, literary production, the politics of language, questions of genre and subjectivity; and (2) the intersections among feminist literary theories, postcolonialism, Marxism, anti-racist criticism, queer theory, and post-structuralism.</p>
+        <p><strong class="purple">Pre or Corequisites</strong></p>
+        <p>Prerequisite(s): At least 60% in 1.0 of English 1020-1999 or permission of the Department.</p>
+        <p><strong class="purple">Class Hours</strong></p>
+        <p>Thursday 9:30 am - 11:30 am</p>
+        <p><strong class="purple">Student Review Summary</strong></p>
+        <p>Most-used words to describe this course: fun, empowering, interesting.<br>77% of students enjoyed this course.<br>28% of students say this course is difficult.</p>
+      </div>
+      <br>
+      <button class="button_disabled">Add to Schedule</button><p class="small">You do not have the prerequesites for this course.</p>
+    </div>
+    <div class="grid-item" data-subject="Biology" data-year="Third" data-campus="Main" id="bio2_block">
+      <h2><strong class="purple">3218G Biology of the Fungi</strong></h2>
+      <div class="course_info">
+        <p><strong class="purple">Course Description</strong></p>
+        <p id="description1">This course provides an introduction to the fungi with emphasis on their biology, ecology, genetics and interactions with other organisms, including humans and their crops. Emphasis is on the true fungi, including yeasts, with brief treatment of other fungus-like microbes of the Kingdoms Chromalveolata and Amoebozoa.</p>
+        <p><strong class="purple">Pre or Corequisites</strong></p>
+        <p>Prerequisite(s): At least 1.0 course in Biology at the 2200-level or higher.</p>
+        <p><strong class="purple">Class Hours</strong></p>
+        <p>Monday 3:30 pm - 5:30 pm</p>
+        <p><strong class="purple">Student Review Summary</strong></p>
+        <p>Most-used words to describe this course: fun, cool, interesting.<br>67% of students enjoyed this course.<br>22% of students say this course is difficult.</p>
+      </div>
+      <br>
+      <button class="button_disabled">Add to Schedule</button><p class="small">You do not have the prerequesites for this course.</p>
+    </div>
+    <div class="grid-item" data-subject="Computer Science" data-year="Third" data-campus="Main" id="3305_block">
+      <h2><strong class="purple">CS3305A Operating Systems</strong></h2>
+      <div class="course_info">
+        <p><strong class="purple">Course Description</strong></p>
+        <p>This course presents fundamental concepts related to the design and implementation of operating
+        systems. Topics includes basic operating system structure, process scheduling, process and thread
+        synchronization and concurrency, memory management, file systems and storage servers, and if time
+        permits a few “hot” topics.
+        </p>
+        <p><strong class="purple">Pre or Corequisites</strong></p>
+        <p>Prerequisite(s): Either (Computer Science 2208A/B and 2211A/B) or (Computer Science 2101A/B and 2208A/B) or
+        (Computer Science 2210A/B, 2211A/B, ECE 3375A/B, and registration in the fourth year of a BESc
+        program in Computer Engineering or Mechatronic Systems Engineering.)</p>
+        <p><strong class="purple">Class Hours</strong></p>
+        <p>Monday 9:30 am - 10:30 am at SEB-1200<br>Wednesday 9:30 am - 11:30 am at SEB-1200</p>
+        <p><strong class="purple">Student Review Summary</strong></p>
+        <p>Most-used words to describe this course: difficult, time-consuming, interesting.<br>49% of students enjoyed this course.<br>51% of students say this course is difficult.</p>
+      </div>
+      <br>
+      <button onclick="addCourse3305()" class="button">Add to Schedule</button>
+    </div>
+    <div class="grid-item" data-subject="Computer Science" data-year="Third" data-campus="Main" id="3350_block">
+      <h2><strong class="purple">CS3350A Computer Organization</strong></h2>
+      <div class="course_info">
+        <p><strong class="purple">Course Description</strong></p>
+        <p>The course is designed to give students an appreciation of hardware, its design, its implementation, and the impact of all of this on how software runs on the hardware. We will look at the general topics:
+        <br>&#8226;&nbsp;&nbsp;Hardware Abstractions
+        <br>&#8226;&nbsp;&nbsp;Qualitative Measures and Performance Metrics
+        <br>&#8226;&nbsp;&nbsp;Logical Circuits
+        <br>&#8226;&nbsp;&nbsp;Instruction Set Architectures (MIPS)
+        <br>&#8226;&nbsp;&nbsp;CPU data path and Pipelining
+        <br>&#8226;&nbsp;&nbsp;Multi-core architectures, parallelism
+        </p>
+        <p><strong class="purple">Pre or Corequisites</strong></p>
+        <p>Prerequisite(s): COMP 2208, COMP 2210, COMP 2211, and either COMP 2209 or COMP 2101<br>Antirequisite(s): ECE 3375</p>
+        <p><strong class="purple">Class Hours</strong></p>
+        <p>Tuesday 3:00 pm - 4:00 pm at MC-110<br>Thursday 3:00 pm - 5:00 pm at SSC-2050</p>
+        <p><strong class="purple">Student Review Summary</strong></p>
+        <p>Most-used words to describe this course: difficult, time-consuming, interesting.<br>49% of students enjoyed this course.<br>51% of students say this course is difficult.</p>
+      </div>
+      <br>
+      <button onclick="addCourse3350()" class="button">Add to Schedule</button>
+    </div>
+    <div class="grid-item" data-subject="Computer Science" data-year="Fourth" data-campus="Main" data-keyword="4474" id="4474_block">
+      <h2><strong class="purple">CS4474B Computer Organization</strong></h2>
+      <div class="course_info">
+        <p><strong class="purple">Course Description</strong></p>
+        <p>This course provides an overview of a number of areas in human-computer interaction (HCI). Broadly speaking, HCI is an
+        interdisciplinary area concerned with the design, evaluation, and implementation of interactive systems for human use and
+        with the study of major phenomena surrounding them. HCI addresses any interaction with computers by humans, as
+        developers or as users, as individuals or as groups. On completion of the course, students are expected to have theoretical
+        knowledge of and practical experience in the fundamental aspects of designing, implementing, and evaluating interactive
+        systems that are useful and usable. Design of usable technology draws extensively on knowledge of informatics, cognition,
+        communication, and computation. It is expected that students will become familiar with some of the literature in HCI and
+        develop sufficient background in HCI issues to do more advanced work in this area.
+        </p>
+        <p><strong class="purple">Pre or Corequisites</strong></p>
+        <p>Prerequisite(s): CS3307</p>
+        <p><strong class="purple">Class Hours</strong></p>
+        <p>Monday 2:30 pm - 5:30 pm at SEB-1200</p>
+        <p><strong class="purple">Student Review Summary</strong></p>
+        <p>Most-used words to describe this course: fun, relevant, interesting.<br>59% of students enjoyed this course.<br>31% of students say this course is difficult.</p>
+      </div>
+      <br>
+      <button onclick="addCourse4474()" class="button">Add to Schedule</button>
+    </div>
+    <div>
+      <div class="grid-container">
+
+        <div class="grid">
+          <div class="semester-header">Fall Semester</div>
+          <div class="time-header">Time</div>
+          <div class="monday-col">Monday</div>
+          <div class="tuesday-col">Tuesday</div>
+          <div class="wednesday-col">Wednesday</div>
+          <div class="thursday-col">Thursday</div>
+          <div class="friday-col">Friday</div>
+          <div class="time-col">7:00 AM</div>
+          <div class="time-col">7:30 AM</div>
+          <div class="time-col">8:00 AM</div>
+          <div class="time-col">8:30 AM</div>
+          <div class="time-col">9:00 AM</div>
+          <div class="time-col">9:30 AM</div>
+          <div class="first-course">
+            <div class="first-course-first-slot" onclick="firston()" id="first3305" hidden>
+              <div class="course-name">COMPSCI 3305</div>
+              <div class="course-lecture"> LEC 001</div>
+              <div class="course-time">9:30-10:30</div>
+            </div>
+          </div>
+          <div></div>
+          <div class="first-course" onclick="firston()" id="second3305" hidden>
+            <div class="first-course-second-slot">
+              <div class="course-name">COMPSCI 3305</div>
+              <div class="course-lecture"> LEC 001</div>
+              <div class="course-time">9:30-11:30</div>
+            </div>
+          </div>
+          <div class="time-col">10:00 AM</div>
+          <div class="time-col">10:30 AM</div>
+          <div class="time-col">11:00 AM</div>
+          <div class="time-col">11:30 AM</div>
+          <div class="time-col">12:00 PM</div>
+          <div class="time-col">12:30 PM</div>
+          <div class="time-col">1:00 PM</div>
+          <div class="time-col">1:30 PM</div>
+          <div class="time-col">2:00 PM</div>
+          <div class="time-col">2:30 PM</div>
+          <div class="time-col">3:00 PM</div>
+          <div></div>
+          <div class="second-course" onclick="secondon()" id="first3350" hidden>
+            <div class="second-course-first-slot">
+              <div class="course-name">COMPSCI 3350</div>
+              <div class="course-lecture"> LEC 001</div>
+              <div class="course-time">3:00-4:00</div>
+            </div>
+          </div>
+          <div></div>
+          <div class="second-course" onclick="secondon()" id="second3350" hidden>
+            <div class="second-course-second-slot">
+              <div class="course-name">COMPSCI 3350</div>
+              <div class="course-lecture"> LEC 001</div>
+              <div class="course-time">3:00-5:00</div>
+            </div>
+          </div>
+          <div class="time-col">3:30 PM</div>
+          <div class="time-col">4:00 PM</div>
+          <div class="time-col">4:30 PM</div>
+          <div class="time-col">5:00 PM</div>
+          <div class="time-col">5:30 PM</div>
+          <div class="time-col">6:00 PM</div>
+          <div class="time-col">6:30 PM</div>
+          <div class="time-col">7:00 PM</div>
+          <div class="time-col">7:30 PM</div>
+          <div class="time-col">8:00 PM</div>
+          <div class="time-col">8:30 PM</div>
+          <div class="time-col">9:00 PM</div>
+          <div class="time-col">9:30 PM</div>
+        </div>
+        <div class="grid">
+          <div class="semester-header">Winter Semester</div>
+          <div class="time-header">Time</div>
+          <div class="monday-col">Monday</div>
+          <div class="tuesday-col">Tuesday</div>
+          <div class="wednesday-col">Wednesday</div>
+          <div class="thursday-col">Thursday</div>
+          <div class="friday-col">Friday</div>
+          <div class="time-col">7:00 AM</div>
+          <div class="third-course" id="drag-second"
+            ondrop="drop(event)" ondragover="allowDrop(event)">
+          </div>
+          <div class="time-col">7:30 AM</div>
+          <div class="time-col">8:00 AM</div>
+          <div class="time-col">8:30 AM</div>
+          <div class="time-col">9:00 AM</div>
+          <div class="time-col">9:30 AM</div>
+          <div class="time-col">10:00 AM</div>
+          <div class="time-col">10:30 AM</div>
+          <div class="time-col">11:00 AM</div>
+          <div class="time-col">11:30 AM</div>
+          <div class="time-col">12:00 PM</div>
+          <div class="time-col">12:30 PM</div>
+          <div class="time-col">1:00 PM</div>
+          <div class="time-col">1:30 PM</div>
+          <div class="time-col">2:00 PM</div>
+          <div class="time-col">2:30 PM</div>
+          <div class="third-course" id="drag-first" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div id="drag-div" class="third-course-first-slot" 
+              draggable="true" ondragstart="drag(event)"
+              ondragend="dragend(event)" onclick="thirdon()" hidden>
+              <div class="course-name">COMPSCI 4474</div>
+              <div class="course-lecture"> LEC 001</div>
+              <div class="course-time" id="drag-item">2:30-5:30</div>
+            </div>
+          </div>
+          <div class="time-col">3:00 PM</div>
+          <div class="time-col">3:30 PM</div>
+          <div class="time-col">4:00 PM</div>
+          <div class="time-col">4:30 PM</div>
+          <div class="time-col">5:00 PM</div>
+          <div class="time-col">5:30 PM</div>
+          <div class="time-col">6:00 PM</div>
+          <div class="time-col">6:30 PM</div>
+          <div class="time-col">7:00 PM</div>
+          <div class="time-col">7:30 PM</div>
+          <div class="time-col">8:00 PM</div>
+          <div class="time-col">8:30 PM</div>
+          <div class="time-col">9:00 PM</div>
+          <div class="time-col">9:30 PM</div>
+        </div>
+
+        <div id="first-course-overlay" onclick="firstoff()">
+          <div class="tf-tree tf-ancestor-tree"> 
+            <ul>
+              <li>
+                <span class="node-text">
+                  <span id="post1" class="tf-nc">
+                    <div class="post-div">
+                      <div class="selected-text">Required For</div>
+                      <div class="course-name">COMPSCI 4472</div>
+                      <div id="posttip1">Course avaliable Winter 2024</div>
+
+                    </div>
+                  </span>
+                </span>
+                <ul>
+                  <li class="tree-line">
+
+                    <span id="selected3" class="tf-nc">
+                      <span class="node-text">
+                        <div class="selected-div">
+                          <div class="selected-text">Selected Course</div>
+                          <div class="course-name">COMPSCI 3305</div>
+                        </div>
+                      </span>
+                    </span>
+                    <ul>
+                      <li>
+                        <span id="prereq2" class="tf-nc">
+                          <span class="node-text">
+                            <div class="prereq-div">
+                              <div class="prereq-text">Pre-requisite</div>
+                              <div class="course-name">COMPSCI 2208</div>
+                              <div id="prereqtip2">Course avaliable in Fall 2024</div>
+                            </div>
+                          </span>
+                        </span>
+                      </li> 
+                      <li>
+                        <span id="prereq3" class="tf-nc">
+                          <span class="node-text">
+                            <div class="prereq-div">
+                              <div class="prereq-text">Pre-requisite</div>
+                              <div class="course-name">COMPSCI 2210</div>
+                              <div id="prereqtip3">Course avaliable in Winter 2024</div>
+                            </div>
+                          </span>
+                        </span>
+                      </li>
+                      <li>
+                        <span id="prereq4" class="tf-nc">
+                          <span class="node-text">
+                            <div class="prereq-div">
+                              <div class="prereq-text">Pre-requisite</div>
+                              <div class="course-name">COMPSCI 2211</div>
+                              <div id="prereqtip4">Course avaliable in Fall 2024</div>
+                            </div>
+                          </span>
+                        </span>
+                      </li> 
+                      <li>
+                        <span id="prereq5" class="tf-nc">
+                          <span class="node-text">
+                            <div class="prereq-div">
+                              <div class="prereq-text">Pre-requisite</div>
+                              <div class="course-name">COMPSCI 2209</div>
+                              <div id="prereqtip5">Course avaliable in Winter 2024</div>
+                            </div>
+                          </span>
+                        </span>
+                      </li>    
+                    </ul>
+                  </li>
+                </ul>  
+              </li>
+            </ul>              
+          </div>
+        </div>
+        <div id="second-course-overlay" onclick="secondoff()">
+          <div class="tf-tree tf-ancestor-tree"> 
+            <ul>
+              <li>
+                <span class="node-text">
+                  <span id="post1" class="tf-nc">
+                    <div class="post-div">
+                      <div class="selected-text">Required For</div>
+                      <div class="course-name">COMPSCI 4409</div>
+                      <div id="posttip1">Course avaliable 2024 (Year long)</div>
+
+                    </div>
+                  </span>
+                </span>
+                <ul>
+                  <li class="tree-line">
+
+                    <span id="selected2" class="tf-nc">
+                      <span class="node-text">
+                        <div class="selected-div">
+                          <div class="selected-text">Selected Course</div>
+                          <div class="course-name">COMPSCI 3350</div>
+                        </div>
+                      </span>
+                    </span>
+                    <ul>
+                      <li>
+                        <span id="prereq2" class="tf-nc">
+                          <span class="node-text">
+                            <div class="prereq-div">
+                              <div class="prereq-text">Pre-requisite</div>
+                              <div class="course-name">COMPSCI 2208</div>
+                              <div id="prereqtip2">Course avaliable in Fall 2024</div>
+                            </div>
+                          </span>
+                        </span>
+                      </li> 
+                      <li>
+                        <span id="prereq3" class="tf-nc">
+                          <span class="node-text">
+                            <div class="prereq-div">
+                              <div class="prereq-text">Pre-requisite</div>
+                              <div class="course-name">COMPSCI 2210</div>
+                              <div id="prereqtip3">Course avaliable in Winter 2024</div>
+                            </div>
+                          </span>
+                        </span>
+                      </li>
+                      <li>
+                        <span id="prereq4" class="tf-nc">
+                          <span class="node-text">
+                            <div class="prereq-div">
+                              <div class="prereq-text">Pre-requisite</div>
+                              <div class="course-name">COMPSCI 2211</div>
+                              <div id="prereqtip4">Course avaliable in Fall 2024</div>
+                            </div>
+                          </span>
+                        </span>
+                      </li> 
+                      <li>
+                        <span id="prereq5" class="tf-nc">
+                          <span class="node-text">
+                            <div class="prereq-div">
+                              <div class="prereq-text">Pre-requisite</div>
+                              <div class="course-name">COMPSCI 2209</div>
+                              <div id="prereqtip5">Course avaliable in Winter 2024</div>
+                            </div>
+                          </span>
+                        </span>
+                      </li>    
+                    </ul>
+                  </li>
+                </ul>  
+              </li>
+            </ul>              
+          </div>    
+        </div>
+        <div id="third-course-overlay" onclick="thirdoff()">
+          <div class="tf-tree example">
+            <ul>
+              <li class="tree-line">
+                <span id="prereq1" class="tf-nc">
+                  <div class="prereq-div">
+                    <div class="prereq-text">Pre-requisite</div>
+                    <div class="course-name">COMPSCI 3307</div>
+                    <div id="prereqtip1">Course avaliable in Fall 2024</div>
+                  </div>
+                </span>
+                <ul>
+                  <li class="tree-line">
+                    <span id="hci" class="tf-nc">
+                      <div class="selected-div">
+                        <div class="selected-text">Selected Course</div>
+                        <div class="course-name">COMPSCI 4474</div>
+                      </div>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <script>
+
+        // Get the filter elements
+        const subjectFilter = document.getElementById('subjectFilter');
+        const yearFilter = document.getElementById('yearFilter');
+        const campusFilter = document.getElementById('campusFilter');
+        const searchInput = document.getElementById("searchInput");
+
+
+        // Get all of the grid items
+        const gridItems = document.querySelectorAll('.grid-item');
+
+        // Add event listeners to the filter elements
+        subjectFilter.addEventListener('change', updateGrid);
+        yearFilter.addEventListener('change', updateGrid);
+        campusFilter.addEventListener('change', updateGrid);
+        searchInput.addEventListener("keyup", filterCards);
+        function filterCards() {
+          const input = document.getElementById("searchInput");
+          const filterText = input.value.toUpperCase();
+          const cards = document.getElementsByClassName("card");
+
+          for (let i = 0; i < cards.length; i++) {
+            const title = cards[i].querySelector(".title").textContent.toUpperCase();
+            const description = cards[i].querySelector(".description").textContent.toUpperCase();
+
+            if (title.indexOf(filterText) > -1 || description.indexOf(filterText) > -1) {
+              cards[i].style.display = "";
+            } else {
+              cards[i].style.display = "none";
+            }
+          }
+        }
+
+        // Update the grid based on the selected filters
+        function updateGrid() {
+          // Get the currently selected filter values
+          const selectedSubject = subjectFilter.value;
+          const selectedYear = yearFilter.value;
+          const selectedCampus = campusFilter.value;
+
+          // Loop through all of the grid items
+          for (let i = 0; i < gridItems.length; i++) {
+            const item = gridItems[i];
+
+            // Check if the item matches the selected filters
+            const itemSubject = item.getAttribute('data-subject');
+            const itemYear = item.getAttribute('data-year');
+            const itemCampus = item.getAttribute('data-campus');
+
+            const matchesSubject = selectedSubject === '' || selectedSubject === itemSubject;
+            const matchesYear = selectedYear === '' || selectedYear === itemYear;
+            const matchesCampus = selectedCampus === '' || selectedCampus === itemCampus;
+
+            // Show or hide the item based on the filter matches
+            if (matchesSubject && matchesYear && matchesCampus) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          }
+        }
+
+        function addCourse3305() {
+          document.getElementById("first3305").removeAttribute("hidden");
+          document.getElementById("second3305").removeAttribute("hidden");
+        }
+
+        function addCourse3350() {
+          document.getElementById("first3350").removeAttribute("hidden");
+          document.getElementById("second3350").removeAttribute("hidden");
+        }
+
+        function addCourse4474() {
+          document.getElementById("drag-div").removeAttribute("hidden");
+        }
+
+        function signout() {
+          var val = confirm("Are you sure you want to sign out?");
+          if(val == true ) {
+            window.location.href = 'signout.html';
+            return true;
+          } 
+          else {
+            return false;
+          }
+        }
+      </script>
+      <!-- End of Build Draft -->
+
+      <!-- why tf is there such weird spacing -->
+
+      <!-- testing left align -->
+      <div style="float: left;">
+        <h3>Visibility and Gulfs of execution and evaluation</h3>
+        <p>As designers, we constructed input/output characteristics of the interface to make better matches to psychological needs of the year. In this way, the gulfs of execution and evaluation can be bridged better. To improve visibility, all course selection options are clearly outlined and separated into clearer steps compared to the old version of DraftMySchedule. For execution, the steps have become more efficient as we provide the user additional options to add courses, ie through the Quick Add. For evaluation, we have improved the process of the user determining which courses they can take as our pre-requisite tree clearly outlines what their existing courses can lead to. <b>Refer to the interactive component under Quick Add and test out the button hovering.
+        </b></p>
+
+        <h3>Affordances</h3>
+        <p>False affordance occurs as currently DraftMySchedule does not take into account if the user can enroll in the course. With our solution, allowing users to add a course to their draft if they have met the requirements. For drafts beyond the present semester, our system will include an additional interaction component, which has users choose their ‘main draft’ for every semester. This ‘main draft’ will be used to track expected progression.</p>
+
+        <h3>Constraints</h3>
+        <p>Adding constraints prevents students from adding courses they aren’t eligible for into their draft. By restricting the kinds of user interaction that can take place at a given moment prevents the user from selecting incorrect options and thereby reduces the chance of making a mistake in their course planning. It will help students by provide structure and plan accordingly and prevent intentional errors.
+        We used menus (Homepage.moduleB) to manage information complexity so that only necessary or requested information is displayed at any given time. After the subject is chosen, the courses are also grouped into categories to find information easier (ie. first, second year course).
+        </p>
+
+        <h3>GIGO (garbage in garbage out)</h3>
+        <p>The quality of the output depends on quality of input. As such, if the user puts in an invalid input for the dropdown, they will get an incorrect output. <b>Refer to the interaction under Quick Add.</b></p>
+
+        <h3>Metaphors</h3>
+        <p>An example of a skeuomorphic metaphor is the prerequisite tree as it represents an actual tree which shows a path containing which courses can lead to which. 
+        An example of a virtual metaphor is clicking stars to rate the course. The act of clicking the amount of stars is a metaphor for the concept of grading and evaluation. 
+        </p>
+      </div> 
+      <!-- added that above ^^ -->
+
+      <!-- Rate Courses Interaction -->
+      <h1>Rate Courses</h1>
+      <div class="selectdiv">
+        <label for="faculty" class="purple"><strong>Please select a course to review:</strong></label>
+        <select class="dropdown" name="courses" id="courses" >
+          <option value="calc1000" id="calc1000">Calc1000 Calculus I</option>
+          <option value="classics1000" id="classics1000">Classics1000 Greek and Roman Civilization</option>
+          <option value="econ1021" id="econ1021">Econ1021 Principles of Microeconomics</option>
+          <option value="econ1022" id="econ1022">Econ1022 Principles of Macroeconomics</option>
+          <option value="cs1026" id="cs1026">CS1026 Computer Science Fundamentals I</option>
+          <option value="cs1027" id="cs1027">CS1027 Computer Science Fundamentals II</option>
+          <option value="aplmath1201" id="aplmath1202">AplMath 1201 Calculus and Probability with Biological Applications</option>
+          <option value="bus1220" id="bus1220">Bus1220 Introduction to Business</option>
+          <option value="cs2208" id="cs2208">CS2208 Introduction to Computer Organization and Architecture</option>
+          <option value="cs2209" id="cs2209">CS2209 Applied Logic for Computer Science</option>
+          <option value="cs2210" id="cs2210">CS2210 Data Structures and Algorithms</option>
+          <option value="cs2211" id="cs2211">CS2211 Software Tools and Systems Programming</option>
+          <option value="stats2244" id="stats2244">Stats2244 Statistics for Science</option>
+        </select>
+      </div>
+      <p style="font-size:14px">You can only review courses that you have taken or that you are currently taking.</p>
+      <div>
+        <span class="fa fa-star checked" id="star1"></span>
+        <span class="fa fa-star checked" id="star2"></span>
+        <span class="fa fa-star checked" id="star3"></span>
+        <span class="fa fa-star checked" id="star4"></span>
+        <span class="fa fa-star checked" id="star5"></span>
+      </div>
+      <br>
+      <button class="button" onclick="submitReview()">Submit Review</button>
+    </div>
+
+
+    <h3>Semiotics</h3>
+    <p>An example of an iconic symbol is the pencil edit symbol when viewing drafts as this looks like the real representation of a pencil and paper. An example of an indexical symbol is the paper sign beside printer friendly when viewing drafts – the piece of paper signifies that it could be printed. </p>
+    <h3>Representation</h3>
+    <p>Through the see-through interface, a lens is used to display different modalities of data. This is seen when hovering above a course, it will show the past courses and future courses the selected course leads to. <b>Refer to the interactive component under Quick Add and test out the see-through interface after adding a course.</b></p>
+    <h3>Pictorial Superiority Effect</h3>
+    <p>Using the drag/drop feature achieves the pictorial superiority effect by displaying time slots visually rather than through text. <b>Refer to the interactive component under Quick Add and test out the drag/drop feature by dragging a course.</b></p>
+
+    <!-- HEURISTIC EVAL -->
+    <h1> Heuristic Evaluation</h1>
+
+    <h3>Visibility of System Status</h3>
+    <p>The elements of our designs provide immediate feedback to convey the state to the user. When buttons are hovered over, the color is depressed so the user is aware an action is being recognized. When courses are added to the schedule, they appear at the bottom with a time block and a specific color to indicate it has been added. As well, when drop down menus are selected, an accordion of options is listed for the user to select from. There are no actions that require extended delay to accomplish without appropriate feedback. <b>Refer to the interactive component under Quick Add and test out the button hovering.</b></p>
+
+
+    <h3>Match Between the System and the Real World</h3>
+    <p>The system will not have dramatic changes to the typical DraftMySchedule language that students are already familiar with. It will speak the user’s language by using words and phrases that are recognizable to students. This includes using vocabulary that will help navigate creating a schedule such as prerequisite.</p>
+
+    <h3>User Control & Freedom</h3>
+    <p>The user has good freedom and is able to select any courses so long as they are offered, they meet the requirements, and have the appropriate prerequisites. The schedule is automatically saved and they are able to continue to come back to it and build upon it. The user is never locked into creating one single schedule and is always free to navigate through the different menu bars and explore other courses.</p>
+
+    <h3>Consistency and Standard </h3>
+    <p>The UI follows heavily on mental models that users have developed where you click a button to add a course and it will appear on your schedule. There are also drag and drop functionalities that when interacted with, users can move objects around. Moreover, there are drop down menus and search bars that are consistent with existing mental models. Thus, it conforms to a consistent and standard heuristic as all actions follow the universal standard and are consistent.
+
+    Using a standard color convention achieves internal consistency where users will be able to navigate through buttons. Dark purple buttons are interactive and can be clicked on to perform an action, gray buttons are disabled and thus an action cannot be performed, and light purple will indicate there is a special circumstance where a note is addressed to the user on the side. <b>Refer to the interactive component under Quick Add and test out the drop down buttons and notice the button colours. </b>
+    </p>
+
+
+    <h3>Error Prevention </h3>
+    <p>When adding courses to your schedule, our system will gray out the “add course” button so users cannot add courses that they do not have prerequisites for. There is also a lighter purple shade for courses that users have already taken to prevent individuals from duplicating courses. This will enhance the user experience as students will not encounter slips when going through the process of finishing their course plan, but having troubles registering when on Student Center. </p>
+
+    <h3>Recognition vs. Recall in User Interfaces</h3>
+    <p>The My Profile menu serves as a constant source of information to reference, allowing the user to refer back to its information and aid in their cognition. The user never has to memorize their courses they have added in their drafts, as it is all referenced in the My Profile tab. <b>Refer to the My Profile tab in the prototype.
+    </b></p>
+
+    <h3>Flexibility and Efficiency of Use</h3>
+    <p>There are flexible options to adding courses, such as manually selecting through the dropdown options, or through the “quick add” course suggestions. </p>
+
+    <h3>Aesthetic and Minimalist Design</h3>
+    <p>Our re-design builds on top of the current DraftMySchedule which has an aesthetic and minimalist design, elements that we add also follow the original design. </p>
+
+    <h3>Help Users Recognize, Diagnose and Recover from Errors</h3>
+    <p>On top of error prevention strategies listed above, our re-design makes it intuitive for users to troubleshoot where their errors are coming from and have clear indications through text warnings. </p>
+
+    <h3>Help & Documentation</h3>
+    <p>Help & documentation is adequate and sufficient, information is easily-understood, and instructions are adequate for users to execute. Our re-design adheres well to this heuristic.</p>
+  </body>
+      </html>
