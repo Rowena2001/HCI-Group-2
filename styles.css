@@ -63,6 +63,11 @@ h1 {
   padding-left: 15px;
 }
 
+.navmap {
+  width: 100%;
+  height: auto;
+}
+
 .purple {
   color: #492A7E;
 }
